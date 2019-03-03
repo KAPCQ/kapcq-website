@@ -32,7 +32,7 @@ function MainTitle(props) {
     return (
         <Wrapper container justify="center" alignItems="center">
             <Grid item>
-                <Image className={showImage ? "fadeIn" : "fadeOut"} src={props.images[imgIndex]} alt=""></Image>
+                {props.images ? <Image className={showImage ? "fadeIn" : "fadeOut"} src={props.images[imgIndex]} alt=""></Image> : <div></div>} 
             </Grid>
         </Wrapper>
     )
