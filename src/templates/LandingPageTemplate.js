@@ -1,12 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import styled from 'styled-components'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
 import BackgroundVideo from '../components/BackgroundVideo'
-// import MainSlider from '../components/MainSlider'
-// import MainTitle from '../components/MainTitle'
-// import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Video from '../components/Video'
 import QuickMenu from '../components/QuickMenu'
 import NoticeCard from '../components/NoticeCard'
@@ -22,8 +18,7 @@ export const LandingPageTemplate = ({
     menuItems
   }) => (
     <div>
-        <BackgroundVideo src={video}></BackgroundVideo>
-        {/* <MainSlider></MainSlider> */}
+        <BackgroundVideo src={video} imgSrc={image}></BackgroundVideo>
         
         <div style={{height: "4rem"}}>
             
@@ -69,40 +64,6 @@ export const LandingPageTemplate = ({
                 </Grid>
             </Grid>
         </Grid>
-
-
-        {/* <section className="section section--gradient">
-            <div className="container">
-                <div className="section">
-                    <div className="columns">
-                        <div className="column is-11">
-                        <div className="content">
-                            <PreviewCompatibleImage imageInfo={image} />
-                            <h2
-                                className="has-text-weight-bold is-size-1"
-                                style={{
-                                boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-                                backgroundColor: '#f40',
-                                color: 'white',
-                                padding: '1rem',
-                                }}
-                            >
-                                {title}
-                            </h2>
-                        </div>
-                        <div className="columns">
-                            <div className="column is-7">
-                            <h3 className="has-text-weight-semibold is-size-2">
-                                {heading}
-                            </h3>
-                            <p>{description}</p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> */}
     </div>
   )
   

@@ -2,7 +2,7 @@
 templateKey: landing-page
 video: /img/new_york.mp4
 title: Title
-image: /img/chemex.jpg
+image: /img/meeting-space.png
 heading: Heading
 description: Description
 menuItems:

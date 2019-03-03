@@ -67,12 +67,12 @@ export default class SundayPraisePage extends React.Component {
                 <SimpleTabs tabs={
                     [
                         {name: "전체", item: (<SimplePagination items={itemArray} itemsPerPage={9}></SimplePagination>)},
-                        {name: "임마누엘", item: (<SimplePagination items={item1Array} itemsPerPage={9}></SimplePagination>)},
-                        {name: "호산나", item: (<SimplePagination items={item2Array} itemsPerPage={9}></SimplePagination>)},
-                        {name: "시온", item: (<SimplePagination items={item3Array} itemsPerPage={9}></SimplePagination>)},
-                        {name: "할렐루야", item: (<SimplePagination items={item4Array} itemsPerPage={9}></SimplePagination>)},
-                        {name: "가브리엘", item: (<SimplePagination items={item5Array} itemsPerPage={9}></SimplePagination>)},
-                        {name: "마하나임", item: (<SimplePagination items={item6Array} itemsPerPage={9}></SimplePagination>)},
+                        {name: "임마누엘", item: (<SimplePagination items={item1Array} itemsPerPage={9} description="임마누엘 찬양대 소개"></SimplePagination>)},
+                        {name: "호산나", item: (<SimplePagination items={item2Array} itemsPerPage={9} description="호산나 찬양대 소개"></SimplePagination>)},
+                        {name: "시온", item: (<SimplePagination items={item3Array} itemsPerPage={9} description="시온 찬양대 소개"></SimplePagination>)},
+                        {name: "할렐루야", item: (<SimplePagination items={item4Array} itemsPerPage={9} description="할렐루야 찬양대 소개"></SimplePagination>)},
+                        {name: "가브리엘", item: (<SimplePagination items={item5Array} itemsPerPage={9} description="가브리엘 경찬 소개"></SimplePagination>)},
+                        {name: "마하나임", item: (<SimplePagination items={item6Array} itemsPerPage={9} description="마하나임 경찬 소개"></SimplePagination>)},
                     ]
                     }>
                 </SimpleTabs>

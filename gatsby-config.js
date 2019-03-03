@@ -50,15 +50,6 @@ module.exports = {
       {title: "말씀과 찬양", menu: [
         { item: "주일예배설교", link: "/", subItems: []},
         { item: "특별집회", link: "/", subItems: []},
-        { item: "찬양부서 소개", 
-          subItems: [
-            {name:"찬양대", link: "/"},
-            {name:"경배와찬양", link: "/"},
-            {name:"관현악단", link: "/"},
-            {name:"합창단", link: "/"},
-            {name:"앙상블", link: "/"},
-          ]
-        },
         { item: "주일찬양방송", link: "/sunday-praise", subItems: []},
         { item: "특별찬양방송", link: "/", subItems: []},
         { item: "행사영상", link: "/", subItems: []},

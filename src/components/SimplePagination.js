@@ -6,6 +6,7 @@ import PreviousIcon from '@material-ui/icons/NavigateBefore'
 import NextIcon from '@material-ui/icons/NavigateNext'
 import FirstPageIcon from '@material-ui/icons/FirstPage'
 import LastPageIcon from '@material-ui/icons/LastPage'
+import Typography from '@material-ui/core/Typography';
 
 const PaginationWrapper = styled.div`
     display: flex;
@@ -37,6 +38,10 @@ const PaginationWrapper = styled.div`
     }
 `
 
+const Description = styled(Typography)`
+    margin-top: 2rem !important;
+`
+
 function SimplePagination(props) {
     const [activePage, setPage] = React.useState(1);
     const [content, setContent] = React.useState(null);
@@ -54,6 +59,9 @@ function SimplePagination(props) {
 
     return (
         <div>
+            <div>
+                <Description variant="h6" align="center">{props.description}</Description>
+            </div>
             <div>{content}</div>
             <PaginationWrapper>
                 <Pagination

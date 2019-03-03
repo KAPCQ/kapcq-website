@@ -58,4 +58,23 @@ body
 img
   max-height: 96vh
 
+.fadeIn
+  animation: fadeIn 3s
+
+  @keyframes fadeIn 
+    from
+      opacity: 0
+    to
+      opacity: 1
+
+.fadeOut
+  animation: fadeOut 3s
+
+  @keyframes fadeOut
+    from
+      opacity: 1
+    to
+      opacity: 0
+  
+
 @import "~bulma"

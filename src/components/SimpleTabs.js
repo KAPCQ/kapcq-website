@@ -39,7 +39,9 @@ function SimpleTabs(props) {
   return (
     <div className={classes.root}>
       <AppBar className={classes.bar} position="static">
-        <Tabs centered value={value} onChange={handleChange}>
+        <Tabs value={value} onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto">
           {props.tabs.map((tab, i) => (
             <Tab key={i} label={tab.name} />
           ))}

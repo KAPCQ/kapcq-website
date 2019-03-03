@@ -36,7 +36,7 @@ export const pageQuery = graphql`
         menuItems
         image {
           childImageSharp {
-            fluid(maxWidth: 526, quality: 92) {
+            fluid(maxWidth: 700, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
