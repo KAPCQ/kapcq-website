@@ -8,6 +8,10 @@ const Wrapper = styled(Grid)`
     height: 100vh;
 `
 
+const Image = styled.img`
+    max-width: 700px;
+`
+
 function MainTitle(props) {
 
     const [imgIndex, setIndex] = React.useState(0);
@@ -28,7 +32,7 @@ function MainTitle(props) {
     return (
         <Wrapper container justify="center" alignItems="center">
             <Grid item>
-                <img className={showImage ? "fadeIn" : "fadeOut"} src={props.images[imgIndex]} alt=""></img>
+                <Image className={showImage ? "fadeIn" : "fadeOut"} src={props.images[imgIndex]} alt=""></Image>
             </Grid>
         </Wrapper>
     )

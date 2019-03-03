@@ -11,7 +11,7 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <LandingPageTemplate
-          image={frontmatter.image}
+          images={[frontmatter.image1.publicURL, frontmatter.image2, frontmatter.image3]}
           title={frontmatter.title}
           video={frontmatter.video.publicURL}
           heading={frontmatter.heading}
@@ -24,24 +24,22 @@ export default class IndexPage extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
-    markdownRemark(frontmatter: { templateKey: { eq: "landing-page" } }) {
-      frontmatter {
-        title
-        video {
-					publicURL
-        }
-        heading
-        description
-        menuItems
-        image {
-          childImageSharp {
-            fluid(maxWidth: 700, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+query IndexQuery {
+  markdownRemark(frontmatter: { templateKey: { eq: "landing-page" } }) {
+    frontmatter {
+      title
+      video {
+        publicURL
       }
+      heading
+      description
+      menuItems
+      image1 {
+        publicURL
+      }
+      image2
+      image3
     }
   }
+}
 `

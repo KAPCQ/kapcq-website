@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainTitle from '../components/MainTitle'
 
 const Video = styled.video`
     object-fit: cover;
@@ -11,7 +10,7 @@ const Video = styled.video`
     z-index: -99;
 `
 
-const imgArray = ['/img/meeting-space.png', '/img/tutorials.png']
+// const imgArray = ['/img/meeting-space.png', '/img/tutorials.png']
 
 function BackgroundVideo(props) {
     const videoRef = React.createRef();
@@ -24,7 +23,6 @@ function BackgroundVideo(props) {
             <source src={props.src} type="video/mp4"/>
             Your browser does not support the video tag.
             </Video>
-            <MainTitle images={imgArray}></MainTitle>
         </div>
     )
 }

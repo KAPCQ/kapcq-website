@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
 import BackgroundVideo from '../components/BackgroundVideo'
+import MainTitle from '../components/MainTitle'
 import Video from '../components/Video'
 import QuickMenu from '../components/QuickMenu'
 import NoticeCard from '../components/NoticeCard'
@@ -10,7 +11,7 @@ import SimpleTabs from '../components/SimpleTabs'
 import Section from '../components/Section'
 
 export const LandingPageTemplate = ({
-    image,
+    images,
     title,
     heading,
     description,
@@ -18,8 +19,8 @@ export const LandingPageTemplate = ({
     menuItems
   }) => (
     <div>
-        <BackgroundVideo src={video} imgSrc={image}></BackgroundVideo>
-        
+        <BackgroundVideo src={video}></BackgroundVideo>
+        <MainTitle images={images}></MainTitle>
         <div style={{height: "4rem"}}>
             
         </div>
@@ -38,13 +39,13 @@ export const LandingPageTemplate = ({
                     <Typography variant="h4" style={{padding: "1rem 0"}}>공지사항</Typography>
                     <Grid container justify="space-evenly">
                         <Grid item lg={4} style={{paddingBottom: "1rem"}}>
-                            <NoticeCard title="공지사항1" imageInfo={image}></NoticeCard>
+                            <NoticeCard title="공지사항1"></NoticeCard>
                         </Grid>
                         <Grid item lg={4} style={{paddingBottom: "1rem"}}>
-                            <NoticeCard title="공지사항2" imageInfo={image}></NoticeCard>
+                            <NoticeCard title="공지사항2"></NoticeCard>
                         </Grid>
                         <Grid item lg={4} style={{paddingBottom: "1rem"}}>
-                            <NoticeCard title="공지사항3" imageInfo={image}></NoticeCard>
+                            <NoticeCard title="공지사항3"></NoticeCard>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -68,7 +69,7 @@ export const LandingPageTemplate = ({
   )
   
   LandingPageTemplate.propTypes = {
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    images: PropTypes.array,
     video: PropTypes.string,
     title: PropTypes.string,
     heading: PropTypes.string,
