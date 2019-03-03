@@ -3,10 +3,8 @@ templateKey: landing-page
 video: /img/new_york.mp4
 title: Title
 image1: /img/bestrong.png
-image2: >-
-  https://raw.githubusercontent.com/jjoung1128/kapcq/master/static/img/meeting-space.png
-image3: >-
-  https://raw.githubusercontent.com/jjoung1128/kapcq/master/static/img/tutorials.png
+image2: /img/matthew.png
+image3: /img/psalm.png
 heading: Heading
 description: Description
 menuItems:
