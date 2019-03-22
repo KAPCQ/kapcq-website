@@ -21,21 +21,15 @@ export const LandingPageTemplate = ({
     <div>
         <BackgroundVideo src={video}></BackgroundVideo>
         <MainTitle images={images}></MainTitle>
-        <div style={{height: "4rem"}}>
-            
-        </div>
-        <Grid container spacing={16} justify="center">
+        <Grid container justify="center" style={{marginTop: "5rem"}}>
             <Grid item xs={12} md={6}>
-                <Video src="https://www.youtube.com/embed/eoxSXZIzCUo"></Video>
+                <Video src="https://www.youtube.com/embed/UEiH3ToDreU"></Video>
             </Grid>
             <Grid item xs={12} md={4}>
                 <QuickMenu items={menuItems}></QuickMenu>
             </Grid>
-            <Grid item xs={12}>
-                <Typography variant="h3" align="center" style={{padding: "3rem"}}>교회소식</Typography>
-            </Grid>
             <Grid container justify="center" style={{backgroundColor: "#eee"}}>
-                <Grid item lg={10} style={{padding: "2rem"}}>
+                <Grid item lg={10}>
                     <Typography variant="h4" style={{padding: "1rem 0"}}>공지사항</Typography>
                     <Grid container justify="space-evenly">
                         <Grid item lg={4} style={{paddingBottom: "1rem"}}>

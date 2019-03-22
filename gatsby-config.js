@@ -45,7 +45,7 @@ module.exports = {
             {name:"시설 안내", link: "/"},
           ]
         },
-        { item: "섬기는 이들", link: "/", subItems: []},
+        { item: "섬기는 이들", link: "/team", subItems: []},
       ]},
       {title: "말씀과 찬양", menu: [
         { item: "주일예배설교", link: "/", subItems: []},

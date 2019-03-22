@@ -9,6 +9,7 @@ const Wrapper = styled(Grid)`
 `
 
 const Image = styled.img`
+    width: 100%;
     max-width: 700px;
 `
 
