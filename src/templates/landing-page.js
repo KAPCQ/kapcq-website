@@ -9,8 +9,6 @@ const LandingPage = (props) => {
 
   return (
     <div>
-      <Image className="preview-image" src={props.images[0]} alt="image1"></Image>
-      Test
     </div>
   )
 }
