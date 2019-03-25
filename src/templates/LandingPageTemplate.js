@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
-// import BackgroundVideo from '../components/BackgroundVideo'
+import BackgroundVideo from '../components/BackgroundVideo'
 // import MainSlider from '../components/MainSlider'
 import MainTitle from '../components/MainTitle'
 // import styled from 'styled-components';
@@ -21,19 +21,23 @@ const LandingPageTemplate = ({
     menuItems
   }) => (
     <div>
-        {/* <BackgroundVideo src={video}></BackgroundVideo> */}
-        {/* <MainSlider></MainSlider> */}
-        <MainTitle images={['/img/bannerText.png']}></MainTitle>
-        {/* <BackgroundImage></BackgroundImage> */}
-        <Grid container justify="center" style={{marginTop: "5rem"}}>
+        <BackgroundVideo src={video}></BackgroundVideo>
+        <MainTitle images={images}></MainTitle>
+        <div style={{height: "4rem"}}>
+            
+        </div>
+        <Grid container spacing={16} justify="center">
             <Grid item xs={12} md={6}>
-                <Video src="https://www.youtube.com/embed/UEiH3ToDreU"></Video>
+                <Video src="https://www.youtube.com/embed/eoxSXZIzCUo"></Video>
             </Grid>
             <Grid item xs={12} md={4}>
                 <QuickMenu items={['새가족안내', '예배시간', '금주의 주보', '목양칼럼']}></QuickMenu>
             </Grid>
+            <Grid item xs={12}>
+                <Typography variant="h3" align="center" style={{padding: "3rem"}}>교회소식</Typography>
+            </Grid>
             <Grid container justify="center" style={{backgroundColor: "#eee"}}>
-                <Grid item lg={10}>
+                <Grid item lg={10} style={{padding: "2rem"}}>
                     <Typography variant="h4" style={{padding: "1rem 0"}}>공지사항</Typography>
                     <Grid container justify="space-evenly">
                         <Grid item lg={4} style={{paddingBottom: "1rem"}}>

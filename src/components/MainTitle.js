@@ -54,8 +54,7 @@ const Wrapper = styled(Grid)`
 `
 
 const Image = styled.img`
-    width: 100%;
-    max-width: 1000px;
+    max-width: 700px;
 `
 
 function MainTitle(props) {

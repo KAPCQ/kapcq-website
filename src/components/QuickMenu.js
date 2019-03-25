@@ -1,32 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
-import Paper from '@material-ui/core/Paper';
+import { styled } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 
-const MyGrid = styled(Grid)`
-  padding: 0 0 1rem 1rem;
-`
-
-const MyPaper = styled(Paper)`
-  padding: 39% 0 !important;
-  width: 100%;
-  height: 100%;
-  background-color: #eeeeee !important;
-`
+const MyGrid = styled(Grid)({
+    padding: '17% 0 !important',
+    border: '1px solid #eeeeee'
+})
 
 function QuickMenu(props) {
   const gridItems = props.items.map((item, i) =>
     <MyGrid key={i} item xs={6}>
-      <MyPaper>
-        <Typography align="center" variant="h4" style={{fontWeight: "bold"}}>{item}</Typography>
-      </MyPaper>
+        <Typography align="center" variant="headline">
+            <Button variant="outlined" color="primary" size="large">{item}</Button>
+        </Typography>
     </MyGrid>
   );
 
   return (
-    <Grid container justify="center">
+    <Grid container justify="center" spacing={8}>
         {gridItems}
     </Grid>
   );

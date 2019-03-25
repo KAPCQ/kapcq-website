@@ -58,7 +58,7 @@ collections:
     label: "Pages"
     files:
       - file: "src/pages/landing/index.md"
-        label: "메인 홈"
+        label: "Landing"
         name: "landing"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "landing-page"}
