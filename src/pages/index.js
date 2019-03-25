@@ -11,7 +11,7 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <LandingPageTemplate
-          images={[frontmatter.image1.publicURL, frontmatter.image2.publicURL, frontmatter.image3.publicURL]}
+          images={[frontmatter.image1.publicURL, frontmatter.image2, frontmatter.image3]}
           title={frontmatter.title}
           video={frontmatter.video.publicURL}
           heading={frontmatter.heading}
@@ -37,12 +37,8 @@ query IndexQuery {
       image1 {
         publicURL
       }
-      image2 {
-        publicURL
-			}
-      image3 {
-        publicURL
-      }
+      image2
+      image3
     }
   }
 }
