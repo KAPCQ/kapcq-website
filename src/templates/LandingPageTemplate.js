@@ -2,15 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
-import BackgroundVideo from '../components/BackgroundVideo'
+// import BackgroundVideo from '../components/BackgroundVideo'
+// import MainSlider from '../components/MainSlider'
 import MainTitle from '../components/MainTitle'
+// import styled from 'styled-components';
 import Video from '../components/Video'
 import QuickMenu from '../components/QuickMenu'
 import NoticeCard from '../components/NoticeCard'
 import SimpleTabs from '../components/SimpleTabs'
 import Section from '../components/Section'
 
-export const LandingPageTemplate = ({
+const LandingPageTemplate = ({
     images,
     title,
     heading,
@@ -19,14 +21,16 @@ export const LandingPageTemplate = ({
     menuItems
   }) => (
     <div>
-        <BackgroundVideo src={video}></BackgroundVideo>
-        <MainTitle images={images}></MainTitle>
+        {/* <BackgroundVideo src={video}></BackgroundVideo> */}
+        {/* <MainSlider></MainSlider> */}
+        <MainTitle images={['/img/bannerText.png']}></MainTitle>
+        {/* <BackgroundImage></BackgroundImage> */}
         <Grid container justify="center" style={{marginTop: "5rem"}}>
             <Grid item xs={12} md={6}>
                 <Video src="https://www.youtube.com/embed/UEiH3ToDreU"></Video>
             </Grid>
             <Grid item xs={12} md={4}>
-                <QuickMenu items={menuItems}></QuickMenu>
+                <QuickMenu items={['새가족안내', '예배시간', '금주의 주보', '목양칼럼']}></QuickMenu>
             </Grid>
             <Grid container justify="center" style={{backgroundColor: "#eee"}}>
                 <Grid item lg={10}>
@@ -71,4 +75,12 @@ export const LandingPageTemplate = ({
     menuItems: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
   }
 
-export default LandingPageTemplate
+class LandingPage extends React.Component {
+    render() {
+        return (
+            <LandingPageTemplate></LandingPageTemplate>
+        );
+    }
+}
+
+export default LandingPage

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Hidden from '@material-ui/core/Hidden'
@@ -66,25 +66,29 @@ const NavigationBar = (props) => (
     />
 )
 
-class Navbar extends React.Component {
-  state = {
-    isTop: true,
-  };
+function Navbar() {
+  const [isTop, setTop] = useState(true);
 
-  componentDidMount() {
+  // useEffect(() => {
+  //   window.addEventListener("mousemove", (e) => {
+  //     console.log({
+  //       x: e.clientX,
+  //       y: e.clientY,
+  //     });
+  //   });
+  // });
+  useEffect(() => {
     document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 100;
-      if (isTop !== this.state.isTop) {
-          this.setState({ isTop })
+      const isWindowTop = window.scrollY < 100;
+      if (isWindowTop !== isTop) {
+        setTop(isWindowTop);
       }
     });
-  }
+  });
 
-  render() {
-    return (
-      <NavigationBar isTop={this.state.isTop}></NavigationBar>
-    );
-  }
+  return (
+    <NavigationBar isTop={isTop}></NavigationBar>
+  )
 }
 
 export default Navbar
