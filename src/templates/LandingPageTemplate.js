@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
-import BackgroundVideo from '../components/BackgroundVideo'
+// import BackgroundVideo from '../components/BackgroundVideo'
 // import MainSlider from '../components/MainSlider'
-import MainTitle from '../components/MainTitle'
+// import MainTitle from '../components/MainTitle'
 // import styled from 'styled-components';
 import Video from '../components/Video'
 import QuickMenu from '../components/QuickMenu'
@@ -21,11 +21,17 @@ const LandingPageTemplate = ({
     menuItems
   }) => (
     <div>
-        <BackgroundVideo src={video}></BackgroundVideo>
-        <MainTitle images={images}></MainTitle>
-        <div style={{height: "4rem"}}>
-            
-        </div>
+        {/* <BackgroundVideo src={video}></BackgroundVideo>
+        <MainTitle images={images}></MainTitle> */}
+        <Grid container>
+            <img src="/img/main-background.png" alt="main-background" style={{position: "absolute", width: "100%", opacity: 0.8, zIndex: -100}}></img>
+            <div style={{width: "100vw", height: "100vh"}}>
+                <Typography variant="display4">Test</Typography>
+            </div>
+            <div style={{height: "4rem"}}>
+                
+            </div>
+        </Grid>
         <Grid container spacing={16} justify="center">
             <Grid item xs={12} md={6}>
                 <Video src="https://www.youtube.com/embed/eoxSXZIzCUo"></Video>

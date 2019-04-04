@@ -14,7 +14,7 @@ const Wrapper = styled(Grid)`
 `
 
 const MyText = styled(Typography)`
-    padding: 2rem
+    padding: 2rem;
 `
 
 export default function Section(props) {
