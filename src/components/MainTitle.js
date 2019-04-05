@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid'
 import './all.sass'
-// import { Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 // const styles = {
 //     wrapper: {
@@ -53,9 +53,10 @@ const Wrapper = styled(Grid)`
     }
 `
 
-const Image = styled.img`
-    max-width: 700px;
-`
+// const Image = styled.img`
+//     width: 100%;
+//     max-width: 1000px;
+// `
 
 function MainTitle(props) {
     // const [imgIndex, setIndex] = React.useState(0);
@@ -76,14 +77,14 @@ function MainTitle(props) {
     return (
         <Wrapper container justify="center" alignItems="center">
             <Grid item sm={1}></Grid>
-            <Grid item sm={11}>
-                {props.images ? <Image 
-                    // className={showImage ? "fadeIn" : "fadeOut"} 
-                    src={props.images[0]} alt=""></Image> : <div></div>} 
-            </Grid>
             {/* <Grid item sm={11}>
-                <Typography>말씀으로 자신과 세상을 변화시키는 교회</Typography>
+                {props.images ? <Image 
+                    className={showImage ? "fadeIn" : "fadeOut"} 
+                    src={props.images[0]} alt=""></Image> : <div></div>} 
             </Grid> */}
+            <Grid item sm={11}>
+                <Typography>말씀으로 자신과 세상을 변화시키는 교회</Typography>
+            </Grid>
         </Wrapper>
     )
 }

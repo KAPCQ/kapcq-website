@@ -1,9 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
+import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import NestedList from './NestedList';
 import Typography from '@material-ui/core/Typography';
+
+const MyTypography = styled(Typography)`
+  color: ${props => props.isTop ? "#FFFFFF !important" : "#3D3D3D !important"};
+`
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -38,7 +43,7 @@ function SimpleMenu(props) {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <Typography variant="subtitle1">{props.title}</Typography>
+        <MyTypography isTop={props.isTop} variant="subtitle1">{props.title}</MyTypography>
       </Button>
       <Menu id="simple-menu" className={classes.menu} anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         {menuItems}
