@@ -67,7 +67,7 @@ const NavigationBar = (props) => (
 )
 
 function Navbar() {
-  const [istop, setTop] = useState(true);
+  const [isTop, setTop] = useState(true);
 
   // useEffect(() => {
   //   window.addEventListener("mousemove", (e) => {
@@ -80,14 +80,14 @@ function Navbar() {
   useEffect(() => {
     document.addEventListener('scroll', () => {
       const isWindowTop = window.scrollY < 100;
-      if (isWindowTop !== istop) {
+      if (isWindowTop !== isTop) {
         setTop(isWindowTop);
       }
     });
   });
 
   return (
-    <NavigationBar isTop={istop}></NavigationBar>
+    <NavigationBar isTop={isTop}></NavigationBar>
   )
 }
 
