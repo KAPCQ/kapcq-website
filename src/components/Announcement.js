@@ -8,7 +8,7 @@ import RightArrow from '@material-ui/icons/KeyboardArrowRight'
 
 const Wrapper = styled(Grid)`
     background-color: #fff;
-    margin-top: 2rem;
+    margin-top: 2rem !important;
     padding: 2rem 0;
 `
 

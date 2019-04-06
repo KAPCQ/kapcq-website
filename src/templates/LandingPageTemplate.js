@@ -61,7 +61,7 @@ const LandingPageTemplate = ({
             </Grid>
             <Announcement items={[1,2,3]}></Announcement>
             <Grid container justify="center" style={{backgroundColor: "#eee"}}>
-                <Grid item xs={12}>
+                <Grid item xs={12} style={{backgroundColor: "rgba(208, 208, 208, 0.1)"}}>
                     <Section></Section>
                 </Grid>
                 <Grid item xs={12} lg={10} style={{padding: "2rem"}}>
