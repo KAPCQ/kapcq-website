@@ -58,11 +58,11 @@ export default function Section(props) {
                             <Word variant="h4" inline={true}>
                                 [월]_사도행전 16:6-10
                             </Word>
-                            <Typography variant="h6" inline={true} style={{paddingTop: "0.5rem", color: "#fff"}}>
+                            <Typography variant="h6" inline={true} style={{fontWeight: "bold", paddingTop: "0.5rem", color: "#fff"}}>
                                 사도신경/찬송가382장/하이델베르크 요리문답/사도행전 16:6-10
                             </Typography>
                         </Header>
-                        <MyText variant="p">
+                        <MyText variant="body1" style={{fontSize: "1.2rem"}}>
                             때론 하나님께서 우리 계획을 막으시는 것은 그분의 계획이 있기 때문입니다. 아시아에서 말씀을 전하려는 바울의 계획을 성령이 막으시고,
                             항구 도시 드로아에서 하나님의 뜻을 알려 주십니다. 만일 바울이 자신의 계획을 계속 고집했다면,
                             건너와서 도우라는 마게도냐 사람의 환상을 보고도 무시했을 것입니다. 그러나 바울은 마게도냐로 건너가 유럽 선교에

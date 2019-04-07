@@ -6,7 +6,8 @@ import styled from 'styled-components'
 import Video from '../components/Video'
 import QuickMenu from '../components/QuickMenu'
 import Announcement from '../components/Announcement'
-import SimpleTabs from '../components/SimpleTabs'
+import Event from '../components/Event'
+// import SimpleTabs from '../components/SimpleTabs'
 import Section from '../components/Section'
 
 const BackgroundVideo = styled.video`
@@ -64,17 +65,11 @@ const LandingPageTemplate = ({
                 <Grid item xs={12} style={{backgroundColor: "rgba(208, 208, 208, 0.1)"}}>
                     <Section></Section>
                 </Grid>
-                <Grid item xs={12} lg={10} style={{padding: "2rem"}}>
-                    <SimpleTabs
-                        tabs={
-                            [
-                                {name: "행사사진1", item: (<div>test1</div>)},
-                                {name: "행사사진2", item: (<div>test2</div>)},
-                                {name: "행사사진3", item: (<div>test3</div>)},
-                            ]
-                        }
-                    />
-                </Grid>
+                <Event events={[
+                    {src: "/img/family-sing.png", alt: "family-sing", title: "가족찬양제"},
+                    {src: "/img/publish-event.png", alt: "publish-event", title: "히즈핑거 출판감사예배"},
+                    {src: "/img/christian-newspaper.png", alt: "christian-newspaper", title: "미주크리스천 신문사"}
+                    ]}></Event>
             </Grid>
         </Grid>
     </div>

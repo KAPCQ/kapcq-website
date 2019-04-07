@@ -50,7 +50,7 @@ const Body = styled(Typography)`
 
 function Announcement(props) {
   const gridItems = props.items.map((menu, i) =>
-    <Grid item md={3}>
+    <Grid key={i} item md={3}>
         <MyPaper elevation={1}>
             <Flag elevation={1} square={true}>진행중</Flag>
             <div style={{paddingTop: "3.5rem"}}>
