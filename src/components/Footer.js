@@ -47,7 +47,7 @@ function Footer() {
                             <FooterText variant="body1">143-17 Franklin Ave. Flushing, NY 11355</FooterText>
                             <FooterText variant="body1">Tel: (718) 886-4040,4340,4347</FooterText>
                         </Grid>
-                        <Grid md={4}>
+                        <Grid item md={4}>
                             <FooterText variant="body1">교회학교</FooterText>
                             <FooterText variant="body1">AGAPE</FooterText>
                             <FooterText variant="body1">퀸장달력</FooterText>

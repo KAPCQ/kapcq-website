@@ -2,24 +2,33 @@ import React, {useState, useEffect} from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Hidden from '@material-ui/core/Hidden'
+// import Grid from '@material-ui/core/Grid'
 // import churchLogo from '../img/church.svg'
-import SimpleMenu from './SimpleMenu'
+// import SimpleMenu from './SimpleMenu'
 import MobileDrawer from './MobileDrawer'
 
 const MyNavBar = styled.nav`
   background: ${props => props.isTop ? "transparent !important" : "#FFFFFF !important"};
 `
 
-const MyLink = styled(Link)`
-  color: ${props => props.isTop ? "#FFFFFF !important" : "#3D3D3D !important"};
-`
-
 const Container = styled.div`
-  width: 80%;
+  width: 85%;
   margin: auto;
 
   @media (max-width: 960px) {
     width: 100%;
+  }
+`
+
+const MyLink = styled(Link)`
+  color: ${props => props.isTop ? "#FFFFFF !important" : "#3D3D3D !important"};
+`
+
+const MyMenu = styled(MyLink)`
+  padding: 0 1rem;
+
+  :hover {
+    color: #DC9D1E !important;
   }
 `
 
@@ -53,9 +62,12 @@ const NavigationBar = (props) => (
             <h1>퀸즈장로교회</h1>
           </MyLink>
           <Hidden mdDown>
-            {data.site.siteMetadata.menus.map((item, i) => (
+            <div style={{marginTop: "0.8rem"}}>
+              {props.menus}
+            </div>
+            {/* {data.site.siteMetadata.menus.map((item, i) => (
               <SimpleMenu key={i} title={item.title} menus={item.menu} isTop={props.isTop}></SimpleMenu>
-            ))}        
+            ))}         */}
           </Hidden>
           <Hidden lgUp>
             <MobileDrawer menus = {data.site.siteMetadata.menus}></MobileDrawer>
@@ -66,28 +78,43 @@ const NavigationBar = (props) => (
     />
 )
 
-function Navbar() {
+function Navbar(props) {
   const [isTop, setTop] = useState(true);
+  const menuList = [
+    {title: '환영합니다', path: '/welcome'}, 
+    {title: '교회안내', path: '/information'}, 
+    {title: '말씀과 찬양', path: '/worship'}, 
+    {title: '교회기관', path: '/department'}, 
+    {title: '훈련과 양육', path: '/discipline'}, 
+    {title: '선교', path: '/mission'}, 
+    {title: '공동체', path: '/community'}
+  ];
 
-  // useEffect(() => {
-  //   window.addEventListener("mousemove", (e) => {
-  //     console.log({
-  //       x: e.clientX,
-  //       y: e.clientY,
-  //     });
-  //   });
-  // });
+  // function changeColor(menu, e) {
+  //   e.preventDefault();
+  //   console.log(menu);
+  //   window.location.href = menu.path;
+  // }
+
+  const menus = menuList.map((menu, i) =>
+    <MyMenu key={i} isTop={isTop} to={menu.path}>{menu.title}</MyMenu>
+  );
+
   useEffect(() => {
-    document.addEventListener('scroll', () => {
-      const isWindowTop = window.scrollY < 100;
-      if (isWindowTop !== isTop) {
-        setTop(isWindowTop);
-      }
-    });
+    if (props.disableChange) {
+      setTop(false);
+    } else {
+      document.addEventListener('scroll', () => {
+        const isWindowTop = window.scrollY < 100;
+        if (isWindowTop !== isTop) {
+          setTop(isWindowTop);
+        }
+      });
+    }
   });
 
   return (
-    <NavigationBar isTop={isTop}></NavigationBar>
+    <NavigationBar isTop={isTop} menus={menus}></NavigationBar>
   )
 }
 
