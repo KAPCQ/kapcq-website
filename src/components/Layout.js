@@ -36,7 +36,7 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
-        <Navbar disableChange={children.props.container}/>
+        <Navbar/>
         <div>{children}</div>
         <Footer />
       </div>

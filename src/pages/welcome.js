@@ -6,12 +6,15 @@ import Typography from '@material-ui/core/Typography'
 // import Fab from '@material-ui/core/Fab';
 // import { FaDoorOpen } from 'react-icons/fa';
 // import ArrowForward from '@material-ui/icons/ArrowForward'
+// import Paper from '@material-ui/core/Paper'
+// import Button from '@material-ui/core/Button'
 import WelcomeProcess from '../components/WelcomeProcess'
+import NewComerRegister from '../components/NewComerRegister'
 
 export default class IndexPage extends React.Component {
     render() {
         return (
-            <Layout disableChange={true}>
+            <Layout>
                 <Grid container style={{backgroundColor: "rgba(230, 202, 144, 0.5)"}}>
                     <Grid item sm={1}>
                     </Grid>
@@ -22,6 +25,13 @@ export default class IndexPage extends React.Component {
                             교회 방문부터 교인이 되기까지의 과정
                         </Typography>
                         <WelcomeProcess></WelcomeProcess>
+                    </Grid>
+                    <Grid item sm={1}></Grid>
+                </Grid>
+                <Grid container style={{backgroundColor: "#EDE9DE"}}>
+                    <Grid item sm={1}></Grid>
+                    <Grid item sm={10}>
+                        <NewComerRegister></NewComerRegister>
                     </Grid>
                     <Grid item sm={1}></Grid>
                 </Grid>

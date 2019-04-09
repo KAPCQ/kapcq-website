@@ -21,7 +21,7 @@ const Container = styled.div`
 `
 
 const MyLink = styled(Link)`
-  color: ${props => props.isTop ? "#FFFFFF !important" : "#3D3D3D !important"};
+  color: ${props => props.istop === 'true' ? "#FFFFFF !important" : "#3D3D3D !important"};
 `
 
 const MyMenu = styled(MyLink)`
@@ -57,7 +57,7 @@ const NavigationBar = (props) => (
     render={data => (
       <MyNavBar isTop={props.isTop} className="navbar is-transparent" role="navigation" aria-label="main-navigation">
         <Container className="navbar-brand">
-          <MyLink isTop={props.isTop} to="/" className="navbar-item" title="Logo" style={{ flex: 1, fontWeight: "bold" }}>
+          <MyLink istop={props.isTop.toString()} to="/" className="navbar-item" title="Logo" style={{ flex: 1, fontWeight: "bold" }}>
             {/* <img src={churchLogo} alt="KAPCQ" style={{ width: '3rem' }} /> */}
             <h1>퀸즈장로교회</h1>
           </MyLink>
@@ -97,20 +97,20 @@ function Navbar(props) {
   // }
 
   const menus = menuList.map((menu, i) =>
-    <MyMenu key={i} isTop={isTop} to={menu.path}>{menu.title}</MyMenu>
+    <MyMenu key={i} istop={isTop.toString()} to={menu.path}>{menu.title}</MyMenu>
   );
 
   useEffect(() => {
-    if (props.disableChange) {
-      setTop(false);
-    } else {
+    // if (props.disableChange) {
+    //   setTop(false);
+    // } else {
       document.addEventListener('scroll', () => {
         const isWindowTop = window.scrollY < 100;
         if (isWindowTop !== isTop) {
           setTop(isWindowTop);
         }
       });
-    }
+    // }
   });
 
   return (
