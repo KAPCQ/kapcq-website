@@ -1,10 +1,6 @@
-# Gatsby + Netlify CMS Starter
+# KAPCQ Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
-
-**Note:** This starter uses [Gatsby v2](https://www.gatsbyjs.org/blog/2018-09-17-gatsby-v2/).
-
-This repo contains an example business website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org): **[Demo Link](https://gatsby-netlify-cms.netlify.com/)**.
+This repo is a church website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org)
 
 It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
 
@@ -13,18 +9,10 @@ It follows the [JAMstack architecture](https://jamstack.org) by using Git as a s
 - Node (I recommend using v8.2.0 or higher)
 - [Gatsby CLI](https://www.gatsbyjs.org/docs/)
 
-## Getting Started (Recommended)
-
-Netlify CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. The example here is the Kaldi coffee company template (adapted from [One Click Hugo CMS](https://github.com/netlify-templates/one-click-hugo-cms)). Use the button below to build and deploy your own copy of the repository:
-
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-starter-netlify-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-
-After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
-
-### Access Locally
+## Run Locally
 ```
-$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
-$ cd [REPO_NAME]
+$ git clone https://github.com/jjoung1128/kapcq.git
+$ cd kapcq
 $ yarn
 $ npm run develop
 ```
@@ -34,26 +22,66 @@ $ npm run build
 $ npm run serve
 ```
 
-## Getting Started (Without Netlify)
-```
-$ gatsby new [SITE_DIRECTORY_NAME] https://github.com/netlify-templates/gatsby-starter-netlify-cms/
-$ cd [SITE_DIRECTORY_NAME]
-$ npm run build
-$ npm run serve
-```
+## How to contribute
 
-### Setting up the CMS
-Follow the [Netlify CMS Quick Start Guide](https://www.netlifycms.org/docs/quick-start/#authentication) to set up authentication, and hosting.
+### Fork this repository
 
-## Debugging
-Windows users might encounter ```node-gyp``` errors when trying to npm install.
-To resolve, make sure that you have both Python 2.7 and the Visual C++ build environment installed.
+Fork this repository by clicking on the fork button on the top of this page.
+This will create a copy of this repository in your account.
+
+### Clone the repository
+
+Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the clone button and then click the *copy to clipboard* icon.
+
+Open a terminal and run the following git command:
+
 ```
-npm config set python python2.7
-npm install --global --production windows-build-tools
+git clone "https://github.com/<your-user-name>/kapcq.git"
 ```
 
-[Full details here](https://www.npmjs.com/package/node-gyp 'NPM node-gyp page')
+### Create a branch
 
-## Purgecss
-This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/) and [bulma](https://bulma.io/). The bulma builds are usually ~170K but reduced 90% by purgecss.
+Change to the repository directory on your computer (if you are not already there):
+
+```
+cd kapcq
+```
+Now create a branch using the `git checkout` command:
+```
+git checkout -b <add-your-new-branch-name>
+```
+
+### Make necessary changes and commit those changes
+
+Once you make some changes and execute the command `git status` in the project directory, you'll see there are changes.
+
+Add those changes to the branch you just created using the `git add` command:
+
+```
+git add <file-name> 
+```
+or
+```
+git add .
+```
+to add all the files you changed.
+
+Now commit those changes using the `git commit` command:
+```
+git commit -m "<some message about the change>"
+```
+
+### Push changes to GitHub
+
+Push your changes using the command `git push`:
+```
+git push origin <your-branch-name>
+```
+
+### Submit your changes for review
+
+If you go to your repository on GitHub, you'll see a  `Compare & pull request` button. Click on that button.
+
+Now submit the pull request.
+
+Soon your PR will be reviewed and merged with the master branch if it doesn't have any issue.
