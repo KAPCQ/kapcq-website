@@ -3,13 +3,9 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-// import Fab from '@material-ui/core/Fab';
-// import { FaDoorOpen } from 'react-icons/fa';
-// import ArrowForward from '@material-ui/icons/ArrowForward'
-// import Paper from '@material-ui/core/Paper'
-// import Button from '@material-ui/core/Button'
 import WelcomeProcess from '../components/WelcomeProcess'
 import NewComerRegister from '../components/NewComerRegister'
+import Minstry from '../components/Ministry'
 
 export default class IndexPage extends React.Component {
     render() {
@@ -32,6 +28,13 @@ export default class IndexPage extends React.Component {
                     <Grid item sm={1}></Grid>
                     <Grid item sm={10}>
                         <NewComerRegister></NewComerRegister>
+                    </Grid>
+                    <Grid item sm={1}></Grid>
+                </Grid>
+                <Grid container>
+                    <Grid item sm={1}></Grid>
+                    <Grid item sm={10}>
+                        <Minstry></Minstry>
                     </Grid>
                     <Grid item sm={1}></Grid>
                 </Grid>
