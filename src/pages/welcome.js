@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography'
 import WelcomeProcess from '../components/WelcomeProcess'
 import NewComerRegister from '../components/NewComerRegister'
 import Minstry from '../components/Ministry'
+import Path from '../components/Path'
+import Facility from '../components/Facility'
 
 export default class IndexPage extends React.Component {
     render() {
@@ -35,6 +37,20 @@ export default class IndexPage extends React.Component {
                     <Grid item sm={1}></Grid>
                     <Grid item sm={10}>
                         <Minstry></Minstry>
+                    </Grid>
+                    <Grid item sm={1}></Grid>
+                </Grid>
+                <Grid container style={{backgroundColor: "rgba(208, 208, 208, 0.2)"}}>
+                    <Grid item sm={1}></Grid>
+                    <Grid item sm={10}>
+                        <Path></Path>
+                    </Grid>
+                    <Grid item sm={1}></Grid>
+                </Grid>
+                <Grid container>
+                    <Grid item sm={1}></Grid>
+                    <Grid item sm={10}>
+                        <Facility></Facility>
                     </Grid>
                     <Grid item sm={1}></Grid>
                 </Grid>

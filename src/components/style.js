@@ -7,8 +7,13 @@ export const Title = styled(Typography)`
     font-weight: bold !important;
 ` 
 
+export const Header = styled(Typography)`
+    color: #606060 !important;
+    font-weight: bold !important;
+`
+
 export const Description = styled(Typography)`
-    color: #707070 !important;
+    color: #95989A !important;
 `
 
 export const Button = styled.a`
@@ -18,6 +23,13 @@ export const Button = styled.a`
     font-size: 1.4rem;
     font-weight: bold;
     text-align: center;
+`
+
+export const UnderLine = styled.div`
+    margin: auto;
+    width: 5rem;
+    font-size: 2rem;
+    margin-top: -1rem;
 `
 
 // export const Button = styled.button`

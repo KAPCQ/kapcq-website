@@ -65,7 +65,7 @@ function NewComerRegister(props) {
     return (
         <div>
             <MyPaper>
-            <Title variant="h2" align="center">새가족 등록안내</Title>
+            <Title variant="h3" align="center">새가족 등록안내</Title>
             <UnderLine>- - - -</UnderLine>
             <Typography variant="title" align="center" style={{color: "#707070", padding: "1rem 0 3rem 0"}}>
                 새가족 여러분을 새가족학교로 초대합니다!<br/>
