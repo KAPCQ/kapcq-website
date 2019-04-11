@@ -58,7 +58,7 @@ collections:
     label: "Pages"
     files:
       - file: "src/pages/landing/index.md"
-        label: "메인 홈"
+        label: "Homepage"
         name: "landing"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "landing-page"}
@@ -70,6 +70,42 @@ collections:
           - {label: "Heading", name: "heading", widget: "string"}
           - {label: "Description", name: "description", widget: "string"}
           - {label: "Menu Items", name: "menuItems", widget: "list"}
+      - file: "src/pages/information/index.md"
+        label: "교회안내"
+        name: "information"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "information-page"}
+          - {label: "Title", name: "title", widget: "string"}
+      - file: "src/pages/worship/index.md"
+        label: "말씀과찬양"
+        name: "worship"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "worship-page"}
+          - {label: "Title", name: "title", widget: "string"}
+      - file: "src/pages/department/index.md"
+        label: "부서기관"
+        name: "department"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "department-page"}
+          - {label: "Title", name: "title", widget: "string"}
+      - file: "src/pages/discipline/index.md"
+        label: "훈련과양육"
+        name: "discipline"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "discipline-page"}
+          - {label: "Title", name: "title", widget: "string"}
+      - file: "src/pages/mission/index.md"
+        label: "선교"
+        name: "mission"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mission-page"}
+          - {label: "Title", name: "title", widget: "string"}
+      - file: "src/pages/community/index.md"
+        label: "공동체"
+        name: "community"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "community-page"}
+          - {label: "Title", name: "title", widget: "string"}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -77,12 +113,6 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/information/index.md"
-        label: "Information"
-        name: "information"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "information-page"}
-          - {label: "Title", name: "title", widget: "string"}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
