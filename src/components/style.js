@@ -12,6 +12,10 @@ export const Header = styled(Typography)`
     font-weight: bold !important;
 `
 
+export const SubHeader = styled(Typography)`
+    color: #707070 !important;
+`
+
 export const Description = styled(Typography)`
     color: #95989A !important;
 `
