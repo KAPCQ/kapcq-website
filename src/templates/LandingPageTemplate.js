@@ -69,7 +69,8 @@ const LandingPageTemplate = ({
                     {src: "/img/family-sing.png", alt: "family-sing", title: "가족찬양제"},
                     {src: "/img/publish-event.png", alt: "publish-event", title: "히즈핑거 출판감사예배"},
                     {src: "/img/christian-newspaper.png", alt: "christian-newspaper", title: "미주크리스천 신문사"}
-                    ]}></Event>
+                    ]}>
+                </Event>
             </Grid>
         </Grid>
     </div>

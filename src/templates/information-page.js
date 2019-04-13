@@ -3,8 +3,10 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { Grid, Typography } from '@material-ui/core'
-import { Header, SubHeader } from '../components/style'
+import { Header, SubHeader, Title, UnderLine } from '../components/style'
 import styled from 'styled-components'
+import { FaCalendarAlt, FaUsers } from 'react-icons/fa';
+import Table from '../components/Table';
 
 const LargeButton = styled.div`
     padding: 2rem 1rem;
@@ -70,6 +72,176 @@ export const InformationPageTemplate = ({ title }) => {
                     </SubHeader>
                 </div>
             </Grid>
+        </Grid>
+        <Grid container style={{backgroundColor: "rgba(208, 208, 208, 0.2)"}}>
+            <Grid item sm={1}></Grid>
+            <Grid item sm={10}>
+                <Title variant="h3" align="center" style={{marginTop: "3rem"}}>
+                    예배안내 <FaCalendarAlt style={{color: "#E1B355"}}></FaCalendarAlt>
+                </Title>
+                <UnderLine style={{color: "#E1B355"}}>- - - -</UnderLine>
+                <Table
+                    name="정기예배"
+                    header1="시간"
+                    header2="주일 예배"
+                    rows={[
+                        {
+                            fontSize: "1.75rem",
+                            data: ["주일 예배",
+                            <span>1부<br/>
+                            2부<br/>
+                            3부<br/>
+                            4부<br/>
+                            QBC<span style={{fontSize: "0.7rem"}}>(퀸장바이블칼리지)</span><br/>
+                            영어예배(QPEM)<br/>
+                            중국어예배<br/>
+                            <br/>
+                            러시아어예배</span>,
+                            <span>오전 8:30<br/>
+                            오전 10:30<br/>
+                            정오 12:15<br/>
+                            오후 2:00<br/>
+                            오후 2:15<br/>
+                            정오 12:00<br/>
+                            오전 9:30<br/>
+                            오후 2:30<br/>
+                            오전 8:30<br/></span>,
+                            <span>본당<br/>
+                            본당<br/>
+                            본당<br/>
+                            본당<br/>
+                            선교회별<br/>
+                            양순관<br/>
+                            양순관<br/>
+                            <br/>
+                            고등부실<br/></span>]
+                        },
+                        {
+                            fontSize: "1.75rem",
+                            data: ["수요예배",
+                            <span>수요일</span>,
+                            <span>오후 8:00</span>,
+                            <span>본당</span>]
+                        },
+                        {
+                            fontSize: "1.75rem",
+                            data: ["새벽기도회",
+                            <span>매일</span>,
+                            <span>오전 6:00</span>,
+                            <span>본당</span>]
+                        }
+                    ]}
+                ></Table>
+                <div style={{marginTop: "3rem"}}></div>
+                <Table
+                    name="교회학교"
+                    header1="시간"
+                    header2="주일 예배"
+                    rows={[
+                        {
+                            fonstSize: "1rem",
+                            data:[<span style={{fontWeight: "bold"}}>
+                            영아부<br/>
+                            유아부<br/>
+                            유치부<br/>
+                            유년부<br/>
+                            초등부<br/>
+                            중등부<br/>
+                            <br/>
+                            고등부<br/>
+                            <br/>
+                            청년대학부/청년선교부<br/>
+                            청년대학부/청년선교부
+                            </span>,
+                            <span>
+                                1부<br/>
+                                1부<br/>
+                                2부<br/>
+                                2부<br/>
+                                2부<br/>
+                                주일<br/>
+                                토요모임<br/>
+                                주일<br/>
+                                금요모임<br/>
+                                주일<br/>
+                                금요모임
+                            </span>,
+                            <span>
+                                오전 10:30<br/>
+                                오전 10:30<br/>
+                                정오 12:15<br/>
+                                <br/>
+                                <br/>
+                                오전 10:30<br/>
+                                오전 9:00<br/>
+                                오전 10:30<br/>
+                                오후 8:30<br/>
+                                오후 2:00<br/>
+                                오후 8:00
+                            </span>,
+                            <span>
+                                영아부실(지하)<br/>
+                                유아부실(2층)<br/>
+                                유치부실(2층)<br/>
+                                유년부실(4층)<br/>
+                                초등부실(4층)<br/>
+                                중등부실(4층)<br/>
+                                <br/>
+                                고등부실(3층)<br/>
+                                <br/>
+                                본당
+                                <br/>
+                                <pre></pre>
+                            </span>]
+                        }
+                    ]}
+                />
+                <div style={{marginTop: "3rem"}}></div>
+                <Table
+                    name="각 부서 모임"
+                    header1="시간"
+                    header2="주일 예배"
+                    rows={[
+                        {
+                            fontSize: "1rem",
+                            data: [
+                                <span style={{fontWeight: "bold"}}>
+                                    새가족학교<br/>
+                                    전도폭발 훈련<br/>
+                                    제자/영성 훈련<br/>
+                                </span>,
+                                <span>
+                                    화요일<br/>
+                                    화요일<br/>
+                                    목요일<br/>
+                                </span>,
+                                <span>
+                                    오후 7:30<br/>
+                                    오후 7:30<br/>
+                                    오후 8:00<br/>
+                                </span>,
+                                <span>
+                                    친교실(지하)<br/>
+                                    고등부실(3층)<br/>
+                                    고등부실(3층)<br/>
+                                </span>
+                            ]
+                        }
+                    ]}
+                />
+                <div style={{marginTop: "2rem"}}></div>
+            </Grid>
+            <Grid item sm={1}></Grid>
+        </Grid>
+        <Grid container>
+            <Grid item sm={1}></Grid>
+            <Grid item sm={10}>
+                <Title variant="h3" align="center" style={{marginTop: "3rem"}}>
+                    섬기는 이들 <FaUsers style={{color: "#E1B355"}}></FaUsers>
+                </Title>
+                <UnderLine style={{color: "#E1B355"}}>- - - -</UnderLine>
+            </Grid>
+            <Grid item sm={1}></Grid>
         </Grid>
     </div>    
   )
