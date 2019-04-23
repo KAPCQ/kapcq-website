@@ -1,9 +1,19 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './all.sass'
+
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+    fontFamily: [
+      'Nanum Gothic'
+    ]
+  }
+})
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery
@@ -35,9 +45,10 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
+          <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet"></link>
         </Helmet>
         <Navbar/>
-        <div>{children}</div>
+        <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
         <Footer />
       </div>
     )}

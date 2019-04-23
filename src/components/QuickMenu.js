@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 // import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography';
+// import Grid from '@material-ui/core/Grid'
+// import Typography from '@material-ui/core/Typography';
 // import Button from '@material-ui/core/Button';
 
-const MyGrid = styled(Grid)`
+const MyCol = styled(Col)`
   padding: 0 0 1rem 1rem;
 `
 
@@ -17,16 +18,18 @@ const MyPaper = styled.div`
 
 function QuickMenu(props) {
   const gridItems = props.items.map((menu, i) =>
-    <MyGrid key={i} item xs={6}>
+    <MyCol key={i} xs={6}>
       <MyPaper style={{backgroundColor: menu.backgroundColor}}>
-        <Typography align="center" variant="h4" style={{fontWeight: "bold", color: menu.textColor}}>{menu.text}</Typography>
+        <h4 style={{fontSize: "2rem", fontWeight: "bold", color: menu.textColor, textAlign: "center"}}>{menu.text}</h4>
       </MyPaper>
-    </MyGrid>
+    </MyCol>
   );
 
   return (
-    <Grid container justify="center">
+    <Grid fluid>
+      <Row>
         {gridItems}
+      </Row>
     </Grid>
   );
 }
