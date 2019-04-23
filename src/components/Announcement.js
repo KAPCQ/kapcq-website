@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import LeftArrow from '@material-ui/icons/KeyboardArrowLeft'
-import RightArrow from '@material-ui/icons/KeyboardArrowRight'
+import { Row, Col } from 'react-flexbox-grid';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-const Wrapper = styled(Grid)`
+const Wrapper = styled(Row)`
     background-color: #fff;
-    margin-top: 2rem !important;
     padding: 2rem 0;
+`
+
+const Paper = styled.div`
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
 `
 
 const MyPaper = styled(Paper)`
     padding: 0 1.5rem 1.5rem 1.5rem;
+    border-radius: 4px;
 `
 
 const Flag = styled(Paper)`
@@ -26,56 +27,58 @@ const Flag = styled(Paper)`
     color: #fff;
 `
 
-const MyLeftArrow = styled(LeftArrow)`
-    font-size: 7rem !important;
+const MyLeftArrow = styled(FaChevronLeft)`
+    font-size: 4.5rem !important;
     color: rgba(223, 172, 68, 0.8);
     float: right;
 `
 
-const MyRightArrow = styled(RightArrow)`
-    font-size: 7rem !important;
+const MyRightArrow = styled(FaChevronRight)`
+    font-size: 4.5rem !important;
     color: rgba(223, 172, 68, 0.8);
     float: left;
 `
 
-const Title = styled(Typography)`
+const Title = styled.h6`
+    font-size: 1.3rem;
     font-weight: bold;
     color: #666666 !important;
 `
 
-const Body = styled(Typography)`
+const Body = styled.p`
     color: #95989a !important;
     padding: 1rem 0;
+    font-size: 0.8em;
 `
 
 function Announcement(props) {
-  const gridItems = props.items.map((menu, i) =>
-    <Grid key={i} item md={3}>
+  const gridItems = props.items ? props.items.map((menu, i) =>
+    <Col key={i} md={3}>
         <MyPaper elevation={1}>
             <Flag elevation={1} square={true}>진행중</Flag>
             <div style={{paddingTop: "3.5rem"}}>
-                <Title variant="title">
+                <Title>
                     제32회 사순절 서원 새벽기도회 <br/>
                     3월 11일(월) - 4월 20일(토)
                 </Title>
-                <Body component="p">
+                <Body>
                     기대하라! 하나님의 위대하심과 놀라운 회복과...<br/>
                     기대하라! 하나님의 위대하심과 놀라운 회복과...
                 </Body>
             </div>
         </MyPaper>
-    </Grid>
-  );
+    </Col>
+  ) : <div></div>;
 
   return (
-        <Wrapper container spacing={16} justify="center" alignItems="center">
-            <Grid item md={1}>
+        <Wrapper center="xs" middle="xs">
+            <Col md={1}>
                 <MyLeftArrow></MyLeftArrow>
-            </Grid>
+            </Col>
             {gridItems}
-            <Grid item md={1}>
+            <Col md={1}>
                 <MyRightArrow></MyRightArrow>
-            </Grid>
+            </Col>
         </Wrapper>
   );
 }

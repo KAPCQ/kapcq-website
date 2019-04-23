@@ -1,13 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components'
 import Video from '../components/Video'
 import QuickMenu from '../components/QuickMenu'
 import Announcement from '../components/Announcement'
 import Event from '../components/Event'
-// import SimpleTabs from '../components/SimpleTabs'
 import Section from '../components/Section'
 
 const BackgroundVideo = styled.video`
@@ -21,7 +19,6 @@ const BackgroundVideo = styled.video`
 
 const Wrapper = styled(Grid)`
     width: 100vw;
-    height: 100vh;
     display: block;
     position: relative;
 `
@@ -39,40 +36,44 @@ const LandingPageTemplate = ({
             <source src="/img/new_york.mp4" type="video/mp4"/>
             Your browser does not support the video tag.
         </BackgroundVideo>
-        <Wrapper container alignItems="center">
-            <Grid item sm={1}></Grid>
-            <Grid item sm={11}>
-                <Typography variant="h1" style={{color: "white"}}>
-                    말씀으로 자신과 세상을 <br></br> 변화시키는 <span style={{color: "#DC9D1E"}}>교회</span>
-                </Typography>
-                <Typography variant="display1" style={{color: "white"}}>하나님 중심, 말씀 중심, 교회 중심</Typography>
-            </Grid>
+        <Wrapper fluid>
+            <Row middle="xs" style={{height: "100vh"}}>
+                <Col sm={1}></Col>
+                <Col sm={10}>
+                    <h1 style={{color: "white", fontSize: "5rem", lineHeight: "1"}}>
+                        말씀으로 자신과 세상을 <br></br> 변화시키는 <span style={{color: "#DC9D1E"}}>교회</span>
+                    </h1>
+                    <h4 variant="h4" style={{color: "white", padding: "0.5rem", fontSize: "1.5rem"}}>하나님 중심, 말씀 중심, 교회 중심</h4>
+                </Col>
+                <Col sm={1}></Col>
+            </Row>
         </Wrapper>
-        <Grid container justify="center" style={{paddingTop: "3rem", backgroundColor: "#EDE9DE"}}>
-            <Grid item xs={12} md={6}>
-                <Video src="https://www.youtube.com/embed/UEiH3ToDreU"></Video>
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <QuickMenu items={[
-                    {text: '새가족안내', backgroundColor: 'rgba(243, 247, 248, 0.8)', textColor: '#3D3D3D'},
-                    {text: '예배시간', backgroundColor: 'rgba(220, 157, 30, 0.4)', textColor: '#3D3D3D'},
-                    {text: '금주의 주보', backgroundColor: 'rgba(208, 208, 208, 0.8)', textColor: '#3D3D3D'},
-                    {text: '목양칼럼', backgroundColor: 'rgba(220, 157, 30, 0.8)', textColor: 'white'}
-                    ]}></QuickMenu>
-            </Grid>
-            <Announcement items={[1,2,3]}></Announcement>
-            <Grid container justify="center" style={{backgroundColor: "#eee"}}>
-                <Grid item xs={12} style={{backgroundColor: "rgba(208, 208, 208, 0.1)"}}>
-                    <Section></Section>
-                </Grid>
-                <Event events={[
-                    {src: "/img/family-sing.png", alt: "family-sing", title: "가족찬양제"},
-                    {src: "/img/publish-event.png", alt: "publish-event", title: "히즈핑거 출판감사예배"},
-                    {src: "/img/christian-newspaper.png", alt: "christian-newspaper", title: "미주크리스천 신문사"}
-                    ]}>
-                </Event>
-            </Grid>
+        <Grid fluid style={{paddingTop: "3rem", backgroundColor: "#EDE9DE"}}>
+            <Row>
+                <Col sm={1}></Col>
+                <Col xs={12} sm={6}>
+                    <Video src="https://www.youtube.com/embed/UEiH3ToDreU"></Video>
+                </Col>
+                <Col xs={12} sm={4}>
+                    <QuickMenu items={[
+                        {text: '새가족안내', backgroundColor: 'rgba(243, 247, 248, 0.8)', textColor: '#3D3D3D'},
+                        {text: '예배시간', backgroundColor: 'rgba(220, 157, 30, 0.4)', textColor: '#3D3D3D'},
+                        {text: '금주의 주보', backgroundColor: 'rgba(208, 208, 208, 0.8)', textColor: '#3D3D3D'},
+                        {text: '목양칼럼', backgroundColor: 'rgba(220, 157, 30, 0.8)', textColor: 'white'}
+                        ]}/>
+                </Col>
+                <Col sm={1}></Col>
+            </Row>
         </Grid>
+        <Grid fluid>
+            <Announcement items={[1,2,3]}></Announcement>
+        </Grid>
+        <Section></Section>
+        <Event events={[
+            {src: "/img/family-sing.png", alt: "family-sing", title: "가족찬양제"},
+            {src: "/img/publish-event.png", alt: "publish-event", title: "히즈핑거 출판감사예배"},
+            {src: "/img/christian-newspaper.png", alt: "christian-newspaper", title: "미주크리스천 신문사"}
+            ]}/>
     </div>
   )
   

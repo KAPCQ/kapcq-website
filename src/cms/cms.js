@@ -1,6 +1,7 @@
 import CMS from 'netlify-cms'
 
 import LandingPagePreview from './preview-templates/LandingPagePreview'
+import HomePagePreview from './preview-templates/HomePagePreview'
 import InformationPagePreview from './preview-templates/InformationPagePreview'
 import WorshipPagePreivew from './preview-templates/WorshipPagePreview'
 import DepartmentPagePreview from './preview-templates/DepartmentPagePreview'
@@ -15,6 +16,7 @@ import NoticePostPreview from './preview-templates/NoticePostPreview'
 import SundayPraisePostPreview from './preview-templates/SundayPraisePostPreview'
 
 CMS.registerPreviewTemplate('landing', LandingPagePreview)
+CMS.registerPreviewTemplate('home', HomePagePreview)
 CMS.registerPreviewTemplate('information', InformationPagePreview)
 CMS.registerPreviewTemplate('worship', WorshipPagePreivew)
 CMS.registerPreviewTemplate('department', DepartmentPagePreview)
