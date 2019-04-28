@@ -1,11 +1,30 @@
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 
-export const Title = styled(Typography)`
-    padding-top: 2rem;
+export const Text = styled.p`
+    font-size: ${props => props.fontSize};
+    color: #707070;
+    text-align: ${props => props.center ? 'center' : 'left'};
+    font-weight: bold;
+`
+
+export const Title = styled.h1`
     color: #3D3D3D !important;
     font-weight: bold !important;
+    font-size: 3.5rem;
+    text-align: center;
 ` 
+
+export const Banner = styled.div`
+    background-color: ${props => props.backgroundColor};
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    color: #707070;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+`
 
 export const Header = styled(Typography)`
     color: #606060 !important;
@@ -30,8 +49,7 @@ export const Button = styled.a`
 `
 
 export const UnderLine = styled.div`
-    margin: auto;
-    width: 5rem;
+    text-align: center;
     font-size: 2rem;
     margin-top: -1rem;
 `
