@@ -1,11 +1,38 @@
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 
-export const Title = styled(Typography)`
-    padding-top: 2rem;
+export const Text = styled.p`
+    font-size: ${props => props.fontSize};
+    color: #707070;
+    text-align: ${props => props.center ? 'center' : 'left'};
+    font-weight: bold;
+`
+
+export const Title = styled.h1`
     color: #3D3D3D !important;
     font-weight: bold !important;
+    font-size: 3rem;
+    text-align: center;
 ` 
+
+export const Banner = styled.div`
+    background-color: ${props => props.backgroundColor};
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    color: #707070;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`
+
+export const DateBox = styled.div`
+    background-color: ${props => props.backgroundColor};
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+`
 
 export const Header = styled(Typography)`
     color: #606060 !important;
@@ -29,9 +56,19 @@ export const Button = styled.a`
     text-align: center;
 `
 
+export const PrimaryButton = styled.button`
+  background: ${props => props.background};
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 0;
+  border-radius: 3px;
+`;
+
 export const UnderLine = styled.div`
-    margin: auto;
-    width: 5rem;
+    text-align: center;
     font-size: 2rem;
     margin-top: -1rem;
 `
