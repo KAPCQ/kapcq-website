@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { Title, UnderLine, Banner, Text, Button } from '../components/style';
+import { Title, UnderLine, Banner, Text, Button, PrimaryButton } from '../components/style';
 import Video from '../components/Video'
 import DateTitle from '../components/DateTitle'
 import { FaRegThumbsUp, FaShare } from 'react-icons/fa';
@@ -71,7 +71,7 @@ export const WorshipPageTemplate = ({ title }) => {
             </Row>
         </Background>
         <Grid fluid style={{padding: 0}}>
-          <Row style={{backgroundColor: "#EDE9DE"}}>
+          <Row style={{backgroundColor: "#EDE9DE", paddingBottom: "2rem"}}>
             <Col sm={1}></Col>
             <Col sm={10}>
               <Title style={{marginTop: "3rem"}}>말씀</Title>
@@ -87,30 +87,35 @@ export const WorshipPageTemplate = ({ title }) => {
                   </Col>
                   <Col md={5}>
                     <DateTitle
+                      backgroundColor="rgba(240, 215, 164, 0.7)"
                       year="주후 2019."
                       date="04.07"
                       title="여리고를 무너뜨리라"
                       word="[히브리서 11장30-31절] / 김성국 목사"
                     />
                     <DateTitle
+                      backgroundColor="rgba(240, 215, 164, 0.7)"
                       year="주후 2019."
                       date="04.07"
                       title="여리고를 무너뜨리라"
                       word="[히브리서 11장30-31절] / 김성국 목사"
                     />
                     <DateTitle
+                      backgroundColor="rgba(240, 215, 164, 0.7)"
                       year="주후 2019."
                       date="04.07"
                       title="여리고를 무너뜨리라"
                       word="[히브리서 11장30-31절] / 김성국 목사"
                     />
                     <DateTitle
+                      backgroundColor="rgba(240, 215, 164, 0.7)"
                       year="주후 2019."
                       date="04.07"
                       title="여리고를 무너뜨리라"
                       word="[히브리서 11장30-31절] / 김성국 목사"
                     />
                     <DateTitle
+                      backgroundColor="rgba(240, 215, 164, 0.7)"
                       year="주후 2019."
                       date="04.07"
                       title="여리고를 무너뜨리라"
@@ -147,6 +152,134 @@ export const WorshipPageTemplate = ({ title }) => {
                   </Col>
                 </Row>
               </Grid>
+            </Col>
+            <Col sm={1}></Col>
+          </Row>
+          <Row>
+            <Col sm={1}></Col>
+            <Col sm={10}>
+              <Title style={{marginTop: "2.5rem"}}>특별집회</Title>
+              <UnderLine style={{color: "#E1B355"}}>- - - - - - - - -</UnderLine>
+              <Row>
+                <Col md={4}>
+                  <Banner backgroundColor="#88BABA">제직회</Banner>
+                </Col>
+                <Col md={4}>
+                  <Banner backgroundColor="rgba(136,186,186,0.5)">사순절</Banner>
+                </Col>
+                <Col md={4}>
+                  <Banner>수련회</Banner>
+                </Col>
+              </Row>
+              <Row bottom="xs" style={{marginTop: "2rem"}}>
+                <Col md={4}>
+                  <Video src="https://www.youtube.com/embed/B2Gn7SICxz8"></Video>
+                </Col>
+                <Col md={8}>
+                  <DateTitle
+                    backgroundColor="rgba(136, 186, 186, 0.3)"
+                    year="주후 2019."
+                    date="04.07"
+                    title="여리고를 무너뜨리라"
+                    word="[히브리서 11장30-31절] / 김성국 목사"
+                  />
+                </Col>
+              </Row>
+              <Row bottom="xs" style={{marginTop: "1rem"}}>
+                <Col md={4}>
+                  <Video src="https://www.youtube.com/embed/B2Gn7SICxz8"></Video>
+                </Col>
+                <Col md={8}>
+                  <DateTitle
+                    backgroundColor="rgba(136, 186, 186, 0.3)"
+                    year="주후 2019."
+                    date="04.07"
+                    title="여리고를 무너뜨리라"
+                    word="[히브리서 11장30-31절] / 김성국 목사"
+                  />
+                </Col>
+              </Row>
+              <Row bottom="xs" style={{marginTop: "1rem"}}>
+                <Col md={4}>
+                  <Video src="https://www.youtube.com/embed/B2Gn7SICxz8"></Video>
+                </Col>
+                <Col md={8}>
+                  <DateTitle
+                    backgroundColor="rgba(136, 186, 186, 0.3)"
+                    year="주후 2019."
+                    date="04.07"
+                    title="여리고를 무너뜨리라"
+                    word="[히브리서 11장30-31절] / 김성국 목사"
+                  />
+                </Col>
+              </Row>
+              <Row style={{borderTop: "1px solid #88BABA", marginTop: "1rem"}}>
+                <Col xs={12}>
+                  <PrimaryButton background = "rgba(136,186,186,0.3)" style={{float: "right"}}>전체보기</PrimaryButton>
+                </Col>
+              </Row>
+            </Col>
+            <Col sm={1}></Col>
+          </Row>
+          <Row style={{backgroundColor: "rgba(208,208,208,0.2)"}}>
+            <Col sm={1}></Col>
+            <Col sm={10}>
+              <Title style={{marginTop: "2.5rem"}}>찬양영상</Title>
+              <UnderLine style={{color: "#E1B355"}}>- - - - - - - - - </UnderLine>
+              <Row style={{margin: "1rem 0"}}>
+                <Col md={6}>
+                  <Banner backgroundColor="#88BABA">주일찬양방송</Banner>
+                </Col>
+                <Col md={6}>
+                  <Banner>특별찬양방송</Banner>
+                </Col>
+              </Row>
+              <Row bottom="xs" style={{marginTop: "4rem"}}>
+                <Col md={7}>
+                  <Video src="https://www.youtube.com/embed/B2Gn7SICxz8"></Video>
+                </Col>
+                <Col md={5}>
+                  <DateTitle
+                    backgroundColor="rgba(136, 186, 186, 0.3)"
+                    year="주후 2019."
+                    date="04.07"
+                    title="여리고를 무너뜨리라"
+                    word="[히브리서 11장30-31절] / 김성국 목사"
+                  />
+                </Col>
+              </Row>
+              <Row style={{borderTop: "1px solid #88BABA", marginTop: "1rem"}}>
+                <Col xs={12}>
+                  <PrimaryButton background = "rgba(136,186,186,0.3)" style={{float: "right"}}>전체보기</PrimaryButton>
+                </Col>
+              </Row>
+            </Col>
+            <Col sm={1}></Col>
+          </Row>
+          <Row style={{backgroundColor: "#EDE9DE"}}>
+            <Col sm={1}></Col>
+            <Col sm={10}>
+              <Title style={{marginTop: "2.5rem"}}>행사영상</Title>
+              <UnderLine style={{color: "#E1B355", marginBottom: "2rem"}}>- - - - - - - - - </UnderLine>
+              <Row bottom="xs">
+                <Col md={7}>
+                  <Video src="https://www.youtube.com/embed/B2Gn7SICxz8"></Video>
+                </Col>
+                <Col md={5}>
+                  <DateTitle
+                    backgroundColor="#EFDCB5"
+                    year="주후 2019."
+                    date="04.07"
+                    title="여리고를 무너뜨리라"
+                    word="[히브리서 11장30-31절] / 김성국 목사"
+                  />
+                </Col>
+              </Row>
+              <Row style={{borderTop: "1px solid #E6CB93", marginTop: "1rem"}}>
+                <Col xs={12}>
+                  <PrimaryButton background = "#EFDCB5" style={{float: "right"}}>전체보기</PrimaryButton>
+                </Col>
+              </Row>
             </Col>
             <Col sm={1}></Col>
           </Row>

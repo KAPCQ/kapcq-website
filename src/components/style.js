@@ -11,7 +11,7 @@ export const Text = styled.p`
 export const Title = styled.h1`
     color: #3D3D3D !important;
     font-weight: bold !important;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: center;
 ` 
 
@@ -24,6 +24,14 @@ export const Banner = styled.div`
     text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`
+
+export const DateBox = styled.div`
+    background-color: ${props => props.backgroundColor};
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
 `
 
 export const Header = styled(Typography)`
@@ -47,6 +55,17 @@ export const Button = styled.a`
     font-weight: bold;
     text-align: center;
 `
+
+export const PrimaryButton = styled.button`
+  background: ${props => props.background};
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 0;
+  border-radius: 3px;
+`;
 
 export const UnderLine = styled.div`
     text-align: center;

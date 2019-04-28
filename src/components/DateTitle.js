@@ -4,7 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Text } from '../components/style';
 
 const DateBox = styled.div`
-    background-color: #F0D7A4;
+    background-color: ${props => props.backgroundColor};
     margin-bottom: 1rem;
     border-radius: 0.5rem;
     padding: 0.5rem 0;
@@ -15,7 +15,7 @@ function DateTitle(props) {
         <Grid fluid>
             <Row>
                 <Col xs={4}>
-                    <DateBox>
+                    <DateBox backgroundColor={props.backgroundColor}>
                         <Text center fontSize="1.3rem">{props.year}</Text>
                         <Text center fontSize="2.3rem">{props.date}</Text>
                     </DateBox>
