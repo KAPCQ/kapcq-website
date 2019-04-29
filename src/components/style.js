@@ -34,6 +34,19 @@ export const DateBox = styled.div`
     padding: 0.5rem 0;
 `
 
+export const Divider = styled.div`
+    background-color: ${props => props.background};
+    border-radius: 1rem;
+    width: 3rem;
+    height: 0.5rem;
+`
+
+export const MainDescription = styled.h2`
+  font-size: 1.3rem;
+  color: ${props => props.color};
+  padding: 4rem 0 10rem 0;
+`
+
 export const Header = styled(Typography)`
     color: #606060 !important;
     font-weight: bold !important;
