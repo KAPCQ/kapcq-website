@@ -36,6 +36,7 @@
     "react-icons": "^3.5.0",
     "react-image-gallery": "^0.8.14",
     "react-js-pagination": "^3.0.2",
+    "react-tabs": "^3.0.0",
     "react-youtube": "^7.9.0",
     "styled-components": "^4.2.0",
     "uuid": "^3.2.1"

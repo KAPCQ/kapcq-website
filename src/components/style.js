@@ -41,6 +41,12 @@ export const Divider = styled.div`
     height: 0.5rem;
 `
 
+export const MainTitle = styled.h1`
+  font-size: 3rem;
+  color: ${props => props.color};
+  padding-top: 12rem;
+`
+
 export const MainDescription = styled.h2`
   font-size: 1.3rem;
   color: ${props => props.color};

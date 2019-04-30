@@ -1,16 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import Layout from '../components/Layout'
 import { Grid, Row, Col } from 'react-flexbox-grid'
-import { Divider, MainDescription } from '../components/style';
-
-const MainTitle = styled.h1`
-  font-size: 3rem;
-  color: #DFAC44;
-  padding-top: 12rem;
-`
+import { MainTitle, Divider, MainDescription } from '../components/style';
 
 export const DepartmentPageTemplate = ({ title }) => {
 
@@ -20,7 +14,7 @@ export const DepartmentPageTemplate = ({ title }) => {
           <Row>
             <Col sm={1}></Col>
             <Col sm={10}>
-                <MainTitle>{title}</MainTitle>
+                <MainTitle color="#DFAC44">{title}</MainTitle>
                 <Divider background="#ABC8BE" style={{marginTop: "2rem"}}></Divider>
                 <Row>
                   <Col md={6}>
