@@ -53,6 +53,15 @@ export const MainDescription = styled.h2`
   padding: 4rem 0 10rem 0;
 `
 
+export const Background = styled.div`
+  background-image: url(${props => props.image});
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+` 
+
 export const Header = styled(Typography)`
     color: #606060 !important;
     font-weight: bold !important;
@@ -62,8 +71,8 @@ export const SubHeader = styled(Typography)`
     color: #707070 !important;
 `
 
-export const Description = styled(Typography)`
-    color: #95989A !important;
+export const Description = styled.p`
+  color: #95989A;
 `
 
 export const Button = styled.a`
@@ -90,6 +99,18 @@ export const UnderLine = styled.div`
     text-align: center;
     font-size: 2rem;
     margin-top: -1rem;
+`
+
+export const Circle = styled.div`
+    background: ${props => props.background};
+    border-radius: 50%;
+    width: ${props => props.radius};
+    height: ${props => props.radius};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${props => props.fontSize};
+    color: ${props => props.color};
 `
 
 // export const Button = styled.button`
