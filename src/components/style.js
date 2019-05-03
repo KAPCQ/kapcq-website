@@ -34,6 +34,44 @@ export const DateBox = styled.div`
     padding: 0.5rem 0;
 `
 
+export const Divider = styled.div`
+    background-color: ${props => props.background};
+    border-radius: 1rem;
+    width: 3rem;
+    height: 0.5rem;
+`
+
+export const MainTitle = styled.h1`
+  font-size: 3rem;
+  color: ${props => props.color};
+  padding-top: 12rem;
+`
+
+export const MainDescription = styled.h2`
+  font-size: 1.3rem;
+  color: ${props => props.color};
+  padding: 4rem 0 10rem 0;
+`
+
+export const Background = styled.div`
+  background-image: url(${props => props.image});
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+` 
+
+export const Image = styled.div`
+    height: 0;
+    padding-top: 56.25%;
+    display: block;
+    background-image: url(${props => props.image});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+`
+
 export const Header = styled(Typography)`
     color: #606060 !important;
     font-weight: bold !important;
@@ -43,8 +81,8 @@ export const SubHeader = styled(Typography)`
     color: #707070 !important;
 `
 
-export const Description = styled(Typography)`
-    color: #95989A !important;
+export const Description = styled.p`
+  color: #95989A;
 `
 
 export const Button = styled.a`
@@ -71,6 +109,18 @@ export const UnderLine = styled.div`
     text-align: center;
     font-size: 2rem;
     margin-top: -1rem;
+`
+
+export const Circle = styled.div`
+    background: ${props => props.background};
+    border-radius: 50%;
+    width: ${props => props.radius};
+    height: ${props => props.radius};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${props => props.fontSize};
+    color: ${props => props.color};
 `
 
 // export const Button = styled.button`

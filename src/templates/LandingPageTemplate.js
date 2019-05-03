@@ -33,14 +33,14 @@ const LandingPageTemplate = ({
   }) => (
     <div>
         <BackgroundVideo autoPlay loop muted>
-            <source src="/img/new_york.mp4" type="video/mp4"/>
+            <source src="/img/main-background.mp4" type="video/mp4"/>
             Your browser does not support the video tag.
         </BackgroundVideo>
         <Wrapper fluid>
             <Row middle="xs" style={{height: "100vh"}}>
                 <Col sm={1}></Col>
                 <Col sm={10}>
-                    <h1 style={{color: "white", fontSize: "5rem", lineHeight: "1"}}>
+                    <h1 style={{color: "white", fontSize: "5rem", lineHeight: "1", marginTop: "20rem"}}>
                         말씀으로 자신과 세상을 <br></br> 변화시키는 <span style={{color: "#DC9D1E"}}>교회</span>
                     </h1>
                     <h4 variant="h4" style={{color: "white", padding: "0.5rem", fontSize: "1.5rem"}}>하나님 중심, 말씀 중심, 교회 중심</h4>

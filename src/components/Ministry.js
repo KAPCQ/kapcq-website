@@ -19,7 +19,7 @@ function Ministry(props) {
     return (
         <div>
             <Title variant="h3" align="center" style={{marginTop: "3rem"}}>사역안내</Title>
-            <Description variant="title" align="center" style={{marginTop: "3rem"}}>
+            <Description style={{marginTop: "3rem", textAlign:"center"}}>
                 사역에 대한 설명과 어떠한 사역을 하고 있는지를 간략하게 설명할 문구가 필요합니다.
             </Description>
             <Grid container spacing={40} justify="center" style={{marginTop: "3rem"}}>
