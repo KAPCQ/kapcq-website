@@ -62,6 +62,16 @@ export const Background = styled.div`
   height: 100vh;
 ` 
 
+export const Image = styled.div`
+    height: 0;
+    padding-top: 56.25%;
+    display: block;
+    background-image: url(${props => props.image});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+`
+
 export const Header = styled(Typography)`
     color: #606060 !important;
     font-weight: bold !important;

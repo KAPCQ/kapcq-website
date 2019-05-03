@@ -1,5 +1,5 @@
 ---
 templateKey: 'community-page'
 path: /community
-title: 목양칼럼
+title: 퀸장소식
 ---
