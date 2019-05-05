@@ -70,12 +70,12 @@ collections:
           - {label: "Heading", name: "heading", widget: "string"}
           - {label: "Description", name: "description", widget: "string"}
           - {label: "Menu Items", name: "menuItems", widget: "list"}
-      - file: "src/pages/home/index.md"
-        label: "Homepage"
-        name: "home"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-          - {label: "Title", name: "title", widget: "string"}
+      # - file: "src/pages/home/index.md"
+      #   label: "Homepage"
+      #   name: "home"
+      #   fields:
+      #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
+      #     - {label: "Title", name: "title", widget: "string"}
       - file: "src/pages/information/index.md"
         label: "교회안내"
         name: "information"
