@@ -56,10 +56,10 @@ const LandingPageTemplate = ({
                 </Col>
                 <Col xs={12} sm={4}>
                     <QuickMenu items={[
-                        {text: '새가족안내', backgroundColor: 'rgba(243, 247, 248, 0.8)', textColor: '#3D3D3D'},
-                        {text: '예배시간', backgroundColor: 'rgba(220, 157, 30, 0.4)', textColor: '#3D3D3D'},
-                        {text: '금주의 주보', backgroundColor: 'rgba(208, 208, 208, 0.8)', textColor: '#3D3D3D'},
-                        {text: '목양칼럼', backgroundColor: 'rgba(220, 157, 30, 0.8)', textColor: 'white'}
+                        {text: '새가족안내', path: '/welcome', backgroundColor: 'rgba(243, 247, 248, 0.8)', textColor: '#3D3D3D'},
+                        {text: '예배시간', path: '/information', backgroundColor: 'rgba(220, 157, 30, 0.4)', textColor: '#3D3D3D'},
+                        {text: '금주의 주보', path: '/community', backgroundColor: 'rgba(208, 208, 208, 0.8)', textColor: '#3D3D3D'},
+                        {text: '목양칼럼', path: '/community', backgroundColor: 'rgba(220, 157, 30, 0.8)', textColor: 'white'}
                         ]}/>
                 </Col>
                 <Col sm={1}></Col>

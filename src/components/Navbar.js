@@ -2,13 +2,21 @@ import React, {useState, useEffect} from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Hidden from '@material-ui/core/Hidden'
-// import Grid from '@material-ui/core/Grid'
+import MobileDrawer from './MobileDrawer'
+
 // import churchLogo from '../img/church.svg'
 // import SimpleMenu from './SimpleMenu'
-import MobileDrawer from './MobileDrawer'
 
 const MyNavBar = styled.nav`
   background: ${props => props.isTop ? "transparent !important" : "#FFFFFF !important"};
+`
+
+const MobileNavBar = styled.nav`
+  position: fixed;
+  top: 0 !important;
+  width: 100vw;
+  background: #DFAC44;
+  z-index: 100;
 `
 
 const Container = styled.div`
@@ -55,25 +63,41 @@ const NavigationBar = (props) => (
       }
     `}
     render={data => (
-      <MyNavBar isTop={props.isTop} className="navbar is-transparent" role="navigation" aria-label="main-navigation">
-        <Container className="navbar-brand">
-          <MyLink istop={props.isTop.toString()} to="/" className="navbar-item" title="Logo" style={{ flex: 1, fontWeight: "bold" }}>
-            {/* <img src={churchLogo} alt="KAPCQ" style={{ width: '3rem' }} /> */}
-            <h1>퀸즈장로교회</h1>
-          </MyLink>
-          <Hidden mdDown>
-            <div style={{marginTop: "0.8rem"}}>
-              {props.menus}
-            </div>
-            {/* {data.site.siteMetadata.menus.map((item, i) => (
-              <SimpleMenu key={i} title={item.title} menus={item.menu} isTop={props.isTop}></SimpleMenu>
-            ))}         */}
-          </Hidden>
-          <Hidden lgUp>
-            <MobileDrawer menus = {data.site.siteMetadata.menus}></MobileDrawer>
-          </Hidden>
-        </Container>
-      </MyNavBar>
+      <div>
+        <Hidden smDown>
+          <MyNavBar isTop={props.isTop} className="navbar is-transparent" role="navigation" aria-label="main-navigation">
+              <Container className="navbar-brand">
+                <MyLink istop={props.isTop.toString()} to="/" className="navbar-item" title="Logo" style={{ flex: 1, fontWeight: "bold" }}>
+                  {/* <img src={churchLogo} alt="KAPCQ" style={{ width: '3rem' }} /> */}
+                  <h1>퀸즈장로교회</h1>
+                </MyLink>
+                  <div style={{marginTop: "0.8rem"}}>
+                    {props.menus}
+                  </div>
+              </Container>
+          </MyNavBar>
+        </Hidden>
+
+        <Hidden mdUp>
+          <MobileNavBar>
+            <Container className="navbar-brand">
+              <Link to="/" className="navbar-item" title="Logo" style={{ flex: 1 }}>
+                <h1 style={{fontWeight: "bold", color: "#FFFFFF"}}>퀸즈장로교회</h1>
+              </Link>
+              <MobileDrawer menus = {[
+                {name: '환영합니다', path: '/welcome'},
+                {name: '교회안내', path: '/information'},
+                {name: '말씀과찬양', path: '/worship'},
+                {name: '교회기관', path: '/department'},
+                {name: '훈련과 양육', path: '/discipline'},
+                {name: '선교', path: '/mission'},
+                {name: '공동체', path: '/community'},
+              ]}></MobileDrawer>
+            </Container>
+          </MobileNavBar>
+        </Hidden>
+      </div>
+      
     )}
     />
 )
@@ -89,12 +113,6 @@ function Navbar(props) {
     {title: '선교', path: '/mission'}, 
     {title: '공동체', path: '/community'}
   ];
-
-  // function changeColor(menu, e) {
-  //   e.preventDefault();
-  //   console.log(menu);
-  //   window.location.href = menu.path;
-  // }
 
   const menus = menuList.map((menu, i) =>
     <MyMenu key={i} istop={isTop.toString()} to={menu.path}>{menu.title}</MyMenu>
