@@ -3,7 +3,7 @@ templateKey: landing-page
 video: /img/new_york.mp4
 title: Title
 image1: /img/bestrong.png
-image2: /img/matthew.png
+image2: /img/bannerText.png
 image3: /img/psalm.png
 heading: Heading
 description: Description
