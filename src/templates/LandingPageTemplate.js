@@ -7,6 +7,7 @@ import QuickMenu from '../components/QuickMenu'
 import Announcement from '../components/Announcement'
 import Event from '../components/Event'
 import Section from '../components/Section'
+import MainTitle from '../components/MainTitle'
 
 const BackgroundVideo = styled.video`
     object-fit: cover;
@@ -17,11 +18,11 @@ const BackgroundVideo = styled.video`
     z-index: -99;
 `
 
-const Wrapper = styled(Grid)`
-    width: 100vw;
-    display: block;
-    position: relative;
-`
+// const Wrapper = styled(Grid)`
+//     width: 100vw;
+//     display: block;
+//     position: relative;
+// `
 
 const LandingPageTemplate = ({
     images,
@@ -36,7 +37,8 @@ const LandingPageTemplate = ({
             <source src="/img/main-background.mp4" type="video/mp4"/>
             Your browser does not support the video tag.
         </BackgroundVideo>
-        <Wrapper fluid>
+        <MainTitle images={images}></MainTitle>
+        {/* <Wrapper fluid>
             <Row middle="xs" style={{height: "100vh"}}>
                 <Col sm={1}></Col>
                 <Col sm={10}>
@@ -47,7 +49,7 @@ const LandingPageTemplate = ({
                 </Col>
                 <Col sm={1}></Col>
             </Row>
-        </Wrapper>
+        </Wrapper> */}
         <Grid fluid style={{paddingTop: "3rem", backgroundColor: "#EDE9DE"}}>
             <Row>
                 <Col sm={1}></Col>
@@ -86,12 +88,12 @@ const LandingPageTemplate = ({
     menuItems: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
   }
 
-class LandingPage extends React.Component {
-    render() {
-        return (
-            <LandingPageTemplate></LandingPageTemplate>
-        );
-    }
-}
+// class LandingPage extends React.Component {
+//     render() {
+//         return (
+//             <LandingPageTemplate></LandingPageTemplate>
+//         );
+//     }
+// }
 
-export default LandingPage
+export default LandingPageTemplate

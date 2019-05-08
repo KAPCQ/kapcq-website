@@ -7,7 +7,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Grid, Row, Col } from 'react-flexbox-grid';
-// import NestedList from './NestedList';
 
 const Menu = styled.li`
   padding: 0.5rem;
@@ -30,6 +29,10 @@ function MobileDrawer(props) {
     setState({ ...state, right: open });
   };
 
+  const toggleMenu = (index) => () => {
+    setState({ ...state, position: index });
+    console.log(state.position);
+  }
   // var arr = [];
   // props.menus.forEach(item => {
   //   var obj = {item: item.title, subItems: []};
@@ -59,9 +62,11 @@ function MobileDrawer(props) {
               <ul>
                 {props.menus.map((menu, i) => (
                   <Menu key={i}>
-                    <Link to={menu.path}>
-                      <Text>{menu.name}</Text>
-                      <GotoIcon style={{color: "rgba(112, 112, 112, 0.7)", float: "right"}}/>
+                    <Link to={menu.path} >
+                      <div onClick={toggleMenu(i)}>
+                        <Text>{menu.name}</Text>
+                        <GotoIcon style={{color: "rgba(112, 112, 112, 0.7)", float: "right"}}/>
+                      </div>
                     </Link>
                   </Menu>
                 ))}

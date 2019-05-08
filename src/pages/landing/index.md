@@ -1,6 +1,6 @@
 ---
 templateKey: landing-page
-video: /img/new_york.mp4
+video: /img/main-background.mp4
 title: Title
 image1: /img/bestrong.png
 image2: /img/bannerText.png

@@ -11,7 +11,7 @@ function MainSlider(props) {
 
     const images = [
         {
-            original: '/img/1queenjang1.png',
+            original: '/img/bannerText.png',
         }
     ]
 
