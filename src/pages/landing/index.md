@@ -2,9 +2,9 @@
 templateKey: landing-page
 video: /img/main-background.mp4
 title: Title
-image1: /img/bestrong.png
-image2: /img/bannerText.png
-image3: /img/psalm.png
+image1: /img/bannerText.png
+image2: /img/psalm.png
+image3: /img/matthew.png
 heading: Heading
 description: Description
 menuItems:
