@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
+import Hidden from '@material-ui/core/Hidden'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { UnderLine } from './style';
 
 const Wrapper = styled(Row)`
     background-color: #fff;
@@ -51,12 +53,19 @@ const Body = styled.p`
     font-size: 0.8em;
 `
 
+const MainTitle = styled.h1`
+    color: #3D3D3D;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+` 
+
 function Announcement(props) {
   const gridItems = props.items ? props.items.map((menu, i) =>
-    <Col key={i} md={3}>
+    <Col key={i} lg={3}>
         <MyPaper elevation={1}>
             <Flag elevation={1} square={true}>진행중</Flag>
-            <div style={{paddingTop: "3.5rem"}}>
+            <div style={{paddingTop: "3.5rem", margin: "1rem 0"}}>
                 <Title>
                     제32회 사순절 서원 새벽기도회 <br/>
                     3월 11일(월) - 4월 20일(토)
@@ -72,13 +81,23 @@ function Announcement(props) {
 
   return (
         <Wrapper center="xs" middle="xs">
-            <Col md={1}>
-                <MyLeftArrow></MyLeftArrow>
-            </Col>
+            <Hidden mdUp>
+                <Col xs={12}>
+                    <MainTitle>교회소식</MainTitle>
+                    <UnderLine style={{color: "#E1B355"}}>----</UnderLine>
+                </Col>
+            </Hidden>
+            <Hidden smDown>
+                <Col md={1}>
+                    <MyLeftArrow></MyLeftArrow>
+                </Col>
+            </Hidden>
             {gridItems}
-            <Col md={1}>
-                <MyRightArrow></MyRightArrow>
-            </Col>
+            <Hidden smDown>
+                <Col md={1}>
+                    <MyRightArrow></MyRightArrow>
+                </Col>
+            </Hidden>
         </Wrapper>
   );
 }

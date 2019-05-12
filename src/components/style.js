@@ -72,6 +72,13 @@ export const Image = styled.div`
     background-position: center;
 `
 
+export const MobileTitle = styled.h1`
+    color: #3D3D3D;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+` 
+
 export const Header = styled(Typography)`
     color: #606060 !important;
     font-weight: bold !important;

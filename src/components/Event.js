@@ -1,19 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const Wrapper = styled(Grid)`
-    padding: 1rem;
-    background-color: #fff;
-`
-
-const Title = styled(Typography)`
+const Title = styled.h4`
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     left: 2rem;
     color: #fff !important;
     font-weight: bold !important;
+    font-size: 1.5rem;
 `
 
 const Image = styled.img`
@@ -22,19 +18,23 @@ const Image = styled.img`
 
 function Event(props) {
     const events = props.events.map((event, i) =>
-        <Grid key={i} item md={4} style={{position: "relative"}}>
+        <Col key={i} md={4} style={{position: "relative"}}>
             <Image src={event.src} alt={event.alt}></Image>
-            <Title variant="h4">{event.title}</Title>
-        </Grid>
+            <Title>{event.title}</Title>
+        </Col>
     );
 
     return (
-        <Wrapper container spacing={16} style={{padding: "1rem", backgroundColor: "#fff"}}>
-            {events}
-            <Grid item xs={11}>
-                <Typography align="right">더보기...</Typography>
-            </Grid>
-        </Wrapper>
+        <Grid fluid style={{padding: "1rem", backgroundColor: "#fff"}}>
+            <Row>
+                {events}
+            </Row>
+            <Hidden smDown>
+                <Grid item xs={11}>
+                    <h4 style={{textAlign: "right"}}>더보기...</h4>
+                </Grid>
+            </Hidden>
+        </Grid>
     );
 }
 

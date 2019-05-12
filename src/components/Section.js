@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { FaUserFriends } from 'react-icons/fa';
+import Hidden from '@material-ui/core/Hidden';
+import { MobileTitle, UnderLine } from './style';
 
 const Wrapper = styled(Grid)`
     background-color: #eeeeee;
@@ -17,7 +19,11 @@ const Title = styled.h2`
 const MyText = styled.p`
     padding-top: 2rem;
     color: #fff !important;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    text-align: left;
+    @media only screen and (min-width: 768px) {
+        font-size: 1.2rem;
+    }
 `
 
 const GroupIcon = styled(FaUserFriends)`
@@ -26,25 +32,31 @@ const GroupIcon = styled(FaUserFriends)`
     color: #e6ca90;
 `
 
-const Board = styled.div`
-    padding: 2rem;
-    background-color: rgba(223, 172, 68, 0.9);
-    border-top-left-radius: 1rem;
+const MobileGroupIcon = styled(FaUserFriends)`
+    font-size: 2rem;
+    padding-top: 1rem;
+    color: #e6ca90;
 `
 
-const Header = styled.div`
-    display: flex;
-    justify-content: space-between;
+const Board = styled.div`
+    padding: 1rem;
+    background-color: rgba(223, 172, 68, 0.9);
+    border-top-left-radius: 1rem;
+    @media only screen and (min-width: 768px) {
+        padding: 2rem;
+    }
 `
 
 const Word = styled.h4`
-    font-size: 2rem;
+    font-size: ${props => props.fontSize};
     font-weight: bold !important;
     color: #fff !important;
+    text-align: left;
 `
 
 const Detail = styled.h6`
-    font-size: 1.2rem;
+    text-align:right;
+    font-size: ${props => props.fontSize};
     font-weight: bold;
     padding-top: 0.5rem;
     color: #fff;
@@ -58,24 +70,50 @@ const More = styled.p`
 export default function Section(props) {
     return (
         <Wrapper fluid style={{padding: "2rem 0 0 0"}}>
-            <Row>
+            <Row center="xs" start="md">
                 <Col md={1}></Col>
                 <Col md={11}>
-                    <Title>가정예배</Title>
-                    <GroupIcon></GroupIcon>
+                    <Hidden mdUp>
+                        <MobileTitle>
+                            가정예배 <MobileGroupIcon></MobileGroupIcon>
+                        </MobileTitle>
+                        <UnderLine style={{color: "#E1B355"}}>------</UnderLine>
+                    </Hidden>
+                    <Hidden smDown>
+                        <Title>가정예배</Title>
+                        <GroupIcon></GroupIcon>
+                    </Hidden>
                 </Col>
-                <Col md={2}></Col>
-                <Col md={10}>
+                <Col xs={1} md={2}></Col>
+                <Col xs={11} md={10}>
                     <Board>
-                        <Col xs={11}>
-                            <Header>
-                                <Word>
-                                    [월]_사도행전 16:6-10
-                                </Word>
-                                <Detail>
-                                    사도신경/찬송가382장/하이델베르크 요리문답/사도행전 16:6-10
-                                </Detail>
-                            </Header>
+                        <Col xs={12} md={11}>
+                            <Row>
+                                <Col lg={5}>
+                                    <Hidden smDown>
+                                        <Word fontSize="2rem">
+                                            [월]_사도행전 16:6-10
+                                        </Word>
+                                    </Hidden>
+                                    <Hidden mdUp>
+                                        <Word fontSize="1.5rem">
+                                            [월]_사도행전 16:6-10
+                                        </Word>
+                                    </Hidden>
+                                </Col>
+                                <Col lg={7}>
+                                    <Hidden smDown>
+                                        <Detail fontSize="1.2rem">
+                                            사도신경 / 찬송가382장 / 하이델베르크 요리문답
+                                        </Detail>
+                                    </Hidden>
+                                    <Hidden mdUp>
+                                        <Detail fontSize="0.8rem">
+                                            사도신경 / 찬송가382장 / 하이델베르크 요리문답
+                                        </Detail>
+                                    </Hidden>
+                                </Col>
+                            </Row>
                             <MyText>
                                 때론 하나님께서 우리 계획을 막으시는 것은 그분의 계획이 있기 때문입니다. 아시아에서 말씀을 전하려는 바울의 계획을 성령이 막으시고,
                                 항구 도시 드로아에서 하나님의 뜻을 알려 주십니다. 만일 바울이 자신의 계획을 계속 고집했다면,
