@@ -62,14 +62,14 @@ collections:
         name: "landing"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "landing-page"}
-          - {label: "Background Video", name: "video", widget: "file"}
-          - {label: "Title", name: "title", widget: "string"}
+          # - {label: "Background Video", name: "video", widget: "file"}
+          # - {label: "Title", name: "title", widget: "string"}
           - {label: "Image1", name: "image1", widget: "image"}
           - {label: "Image2", name: "image2", widget: "image"}
           - {label: "Image3", name: "image3", widget: "image"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Description", name: "description", widget: "string"}
-          - {label: "Menu Items", name: "menuItems", widget: "list"}
+          # - {label: "Heading", name: "heading", widget: "string"}
+          # - {label: "Description", name: "description", widget: "string"}
+          # - {label: "Menu Items", name: "menuItems", widget: "list"}
       # - file: "src/pages/home/index.md"
       #   label: "Homepage"
       #   name: "home"
