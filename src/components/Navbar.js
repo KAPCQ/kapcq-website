@@ -12,11 +12,11 @@ const MyNavBar = styled.nav`
 `
 
 const MobileNavBar = styled.nav`
-  position: fixed;
+  /* position: fixed;
   top: 0 !important;
-  width: 100vw;
-  background: #DFAC44;
-  z-index: 100;
+  width: 100vw; */
+  background: #DFAC44 !important;
+  /* z-index: 100; */
 `
 
 const Container = styled.div`
@@ -79,7 +79,7 @@ const NavigationBar = (props) => (
         </Hidden>
 
         <Hidden mdUp>
-          <MobileNavBar>
+          <MobileNavBar className="navbar is-transparent" role="navigation" aria-label="main-navigation">
             <Container className="navbar-brand">
               <Link to="/" className="navbar-item" title="Logo" style={{ flex: 1 }}>
                 <h1 style={{fontWeight: "bold", color: "#FFFFFF"}}>퀸즈장로교회</h1>

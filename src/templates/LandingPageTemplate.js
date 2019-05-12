@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Link } from 'gatsby'
+import { Grid, Row, Col } from 'react-flexbox-grid'
+import Hidden from '@material-ui/core/Hidden'
 import styled from 'styled-components'
 import Video from '../components/Video'
 import QuickMenu from '../components/QuickMenu'
@@ -18,11 +20,13 @@ const BackgroundVideo = styled.video`
     z-index: -99;
 `
 
-// const Wrapper = styled(Grid)`
-//     width: 100vw;
-//     display: block;
-//     position: relative;
-// `
+const MainLink = styled.p`
+    font-weight: bold;
+    color: #3D3D3D;
+    font-size: 0.8rem;
+    text-align: center;
+    padding-left: 1rem;
+`
 
 const LandingPageTemplate = ({
     images,
@@ -38,31 +42,53 @@ const LandingPageTemplate = ({
             Your browser does not support the video tag.
         </BackgroundVideo>
         <MainTitle images={images}></MainTitle>
-        {/* <Wrapper fluid>
-            <Row middle="xs" style={{height: "100vh"}}>
-                <Col sm={1}></Col>
-                <Col sm={10}>
-                    <h1 style={{color: "white", fontSize: "5rem", lineHeight: "1", marginTop: "20rem"}}>
-                        말씀으로 자신과 세상을 <br></br> 변화시키는 <span style={{color: "#DC9D1E"}}>교회</span>
-                    </h1>
-                    <h4 variant="h4" style={{color: "white", padding: "0.5rem", fontSize: "1.5rem"}}>하나님 중심, 말씀 중심, 교회 중심</h4>
-                </Col>
-                <Col sm={1}></Col>
-            </Row>
-        </Wrapper> */}
-        <Grid fluid style={{paddingTop: "3rem", backgroundColor: "#EDE9DE"}}>
+        <Grid fluid style={{paddingTop: "1rem", backgroundColor: "#EDE9DE"}}>
             <Row>
                 <Col sm={1}></Col>
-                <Col xs={12} sm={6}>
-                    <Video src="https://www.youtube.com/embed/UEiH3ToDreU"></Video>
-                </Col>
-                <Col xs={12} sm={4}>
-                    <QuickMenu items={[
-                        {text: '새가족안내', path: '/welcome', backgroundColor: 'rgba(243, 247, 248, 0.8)', textColor: '#3D3D3D'},
-                        {text: '예배시간', path: '/information', backgroundColor: 'rgba(220, 157, 30, 0.4)', textColor: '#3D3D3D'},
-                        {text: '금주의 주보', path: '/community', backgroundColor: 'rgba(208, 208, 208, 0.8)', textColor: '#3D3D3D'},
-                        {text: '목양칼럼', path: '/community', backgroundColor: 'rgba(220, 157, 30, 0.8)', textColor: 'white'}
-                        ]}/>
+                <Col sm={10}>
+                    <Hidden lgUp>
+                        <Row style={{paddingBottom: "1rem"}} bottom="xs" between="xs">
+                            <Col xs={4}>
+                                <Link to='/welcome'>
+                                    <h1 style={{color: "#DFAC44", fontSize: "1.2rem"}}>환영합니다</h1>
+                                </Link>
+                            </Col>
+                            <Col xs={8}>
+                                <Row end="xs">
+                                    <Col xs={4} style={{padding: "0"}}>
+                                    <Link to='/welcome'>
+                                        <MainLink>새가족안내</MainLink>
+                                    </Link>
+                                    </Col>
+                                    <Col xs={4} style={{padding: "0"}}>
+                                    <Link to='/information'>
+                                        <MainLink>예배안내</MainLink>
+                                    </Link>
+                                    </Col>
+                                    <Col xs={4} style={{padding: "0"}}>
+                                    <Link to='/community'>
+                                        <MainLink>금주의 주보</MainLink>
+                                    </Link>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Hidden>
+                    <Row>
+                        <Col xs={12} xl={7}>
+                            <Video src="https://www.youtube.com/embed/UEiH3ToDreU"></Video>
+                        </Col>
+                        <Hidden mdDown>
+                            <Col xs={12} lg={5}>
+                                <QuickMenu items={[
+                                    {text: '새가족안내', path: '/welcome', backgroundColor: 'rgba(243, 247, 248, 0.8)', textColor: '#3D3D3D'},
+                                    {text: '예배시간', path: '/information', backgroundColor: 'rgba(220, 157, 30, 0.4)', textColor: '#3D3D3D'},
+                                    {text: '금주의 주보', path: '/community', backgroundColor: 'rgba(208, 208, 208, 0.8)', textColor: '#3D3D3D'},
+                                    {text: '목양칼럼', path: '/community', backgroundColor: 'rgba(220, 157, 30, 0.8)', textColor: 'white'}
+                                    ]}/>
+                            </Col>
+                        </Hidden>
+                    </Row>
                 </Col>
                 <Col sm={1}></Col>
             </Row>

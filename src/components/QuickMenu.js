@@ -8,7 +8,7 @@ const MyCol = styled(Col)`
 `
 
 const MyPaper = styled.div`
-  padding: 39% 0 !important;
+  padding: 35% 0 !important;
   width: 100%;
   height: 100%;
   cursor: pointer;
