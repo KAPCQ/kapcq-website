@@ -7,16 +7,16 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { frontmatter } = data.markdownRemark
-
+    const { edges } = data.allMarkdownRemark
+    let latestSermonVideoId = ''
+    if (edges.length > 0) {
+      latestSermonVideoId = edges[0].node.frontmatter.link;
+    }
     return (
       <Layout>
         <LandingPageTemplate
           images={[frontmatter.image1.publicURL, frontmatter.image2.publicURL, frontmatter.image3.publicURL]}
-          title={frontmatter.title}
-          video={frontmatter.video.publicURL}
-          heading={frontmatter.heading}
-          description={frontmatter.description}
-          menuItems = {frontmatter.menuItems}
+          latestSermon={latestSermonVideoId}
         />
       </Layout>
     )
@@ -42,6 +42,24 @@ query IndexQuery {
 			}
       image3 {
         publicURL
+      }
+    }
+  }
+  allMarkdownRemark(
+    filter: { frontmatter: { templateKey: { eq: "sunday-sermon" }}}
+    limit: 1
+    sort: {
+      fields: [frontmatter___date]
+      order: DESC
+  }) 
+  {
+    edges {
+      node {
+        frontmatter {
+          title
+          date
+          link
+        }
       }
     }
   }

@@ -3,15 +3,13 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-// import Content, { HTMLContent } from '../components/Content'
 import Video from '../components/Video'
 
-export const SundayPraisePostTemplate = ({
+export const SundaySermonPostTemplate = ({
   helmet,
   title,
   videoId,
 }) => {
-  // const PostContent = contentComponent || Content
 
   return (
     <section className="section">
@@ -30,18 +28,18 @@ export const SundayPraisePostTemplate = ({
   )
 }
 
-SundayPraisePostTemplate.propTypes = {
+SundaySermonPostTemplate.propTypes = {
   helmet: PropTypes.object,
   title: PropTypes.string,
   videoId: PropTypes.string,
 }
 
-const SundayPraisePost = ({ data }) => {
+const SundaySermonPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout>
-      <SundayPraisePostTemplate
+      <SundaySermonPostTemplate
         helmet={
           <Helmet
             titleTemplate="%s | Notice"
@@ -55,19 +53,18 @@ const SundayPraisePost = ({ data }) => {
   )
 }
 
-SundayPraisePost.propTypes = {
+SundaySermonPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default SundayPraisePost
+export default SundaySermonPost
 
 export const pageQuery = graphql`
-  query SundayPraisePostByID($id: String!) {
+  query SundaySermonPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

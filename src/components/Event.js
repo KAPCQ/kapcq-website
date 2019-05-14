@@ -30,9 +30,7 @@ function Event(props) {
                 {events}
             </Row>
             <Hidden smDown>
-                <Grid item xs={11}>
-                    <h4 style={{textAlign: "right"}}>더보기...</h4>
-                </Grid>
+                <h4 style={{textAlign: "right"}}>더보기...</h4>
             </Hidden>
         </Grid>
     );
