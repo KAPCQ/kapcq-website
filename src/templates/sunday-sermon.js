@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Video from '../components/Video'
+// import Video from '../components/Video'
 
 export const SundaySermonPostTemplate = ({
   helmet,
@@ -20,7 +20,8 @@ export const SundaySermonPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <Video src={"https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0"}></Video>
+            <iframe style={{width: "560px", height: "315px"}} title="mainVideo" src={"https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0"} allow='autoplay' frameBorder="0" allowFullScreen></iframe>
+            {/* <Video src={}></Video> */}
           </div>
         </div>
       </div>
