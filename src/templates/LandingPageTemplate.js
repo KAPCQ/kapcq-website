@@ -30,11 +30,7 @@ const MainLink = styled.p`
 
 const LandingPageTemplate = ({
     images,
-    title,
-    heading,
-    description,
-    video,
-    menuItems
+    latestSermon,
   }) => (
     <div>
         <BackgroundVideo autoPlay loop muted>
@@ -76,7 +72,7 @@ const LandingPageTemplate = ({
                     </Hidden>
                     <Row>
                         <Col xs={12} xl={7}>
-                            <Video src="https://www.youtube.com/embed/UEiH3ToDreU"></Video>
+                            <Video src={"https://www.youtube.com/embed/" + latestSermon + "?rel=0"}></Video>
                         </Col>
                         <Hidden mdDown>
                             <Col xs={12} lg={5}>

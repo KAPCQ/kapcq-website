@@ -3,15 +3,13 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-// import Content, { HTMLContent } from '../components/Content'
-import Video from '../components/Video'
+// import Video from '../components/Video'
 
-export const SundayPraisePostTemplate = ({
+export const SundaySermonPostTemplate = ({
   helmet,
   title,
   videoId,
 }) => {
-  // const PostContent = contentComponent || Content
 
   return (
     <section className="section">
@@ -22,7 +20,8 @@ export const SundayPraisePostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <Video src={"https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0"}></Video>
+            <iframe style={{width: "560px", height: "315px"}} title="mainVideo" src={"https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0"} allow='autoplay' frameBorder="0" allowFullScreen></iframe>
+            {/* <Video src={}></Video> */}
           </div>
         </div>
       </div>
@@ -30,18 +29,18 @@ export const SundayPraisePostTemplate = ({
   )
 }
 
-SundayPraisePostTemplate.propTypes = {
+SundaySermonPostTemplate.propTypes = {
   helmet: PropTypes.object,
   title: PropTypes.string,
   videoId: PropTypes.string,
 }
 
-const SundayPraisePost = ({ data }) => {
+const SundaySermonPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout>
-      <SundayPraisePostTemplate
+      <SundaySermonPostTemplate
         helmet={
           <Helmet
             titleTemplate="%s | Notice"
@@ -55,19 +54,18 @@ const SundayPraisePost = ({ data }) => {
   )
 }
 
-SundayPraisePost.propTypes = {
+SundaySermonPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default SundayPraisePost
+export default SundaySermonPost
 
 export const pageQuery = graphql`
-  query SundayPraisePostByID($id: String!) {
+  query SundaySermonPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

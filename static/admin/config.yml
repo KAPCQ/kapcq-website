@@ -6,54 +6,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "sunday-praise"
-    label: "주일찬양방송"
-    folder: "src/pages/sunday-praise"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "sunday-praise"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {
-        label: "Category", 
-        name: "category", 
-        widget: "select", 
-        options: [
-          { label: "임마누엘", value: 1 },
-          { label: "호산나", value: 2 },
-          { label: "시온", value: 3 },
-          { label: "할렐루야", value: 4 },
-          { label: "가브리엘", value: 5 },
-          { label: "마하나임", value: 6 }
-        ]
-        }
-      - {label: "Video Id", name: "link", widget: "string"}
-
-  - name: "notice"
-    label: "Notice"
-    folder: "src/pages/notice"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "notice-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-
   - name: "pages"
     label: "Pages"
     files:
@@ -67,15 +19,6 @@ collections:
           - {label: "Image1", name: "image1", widget: "image"}
           - {label: "Image2", name: "image2", widget: "image"}
           - {label: "Image3", name: "image3", widget: "image"}
-          # - {label: "Heading", name: "heading", widget: "string"}
-          # - {label: "Description", name: "description", widget: "string"}
-          # - {label: "Menu Items", name: "menuItems", widget: "list"}
-      # - file: "src/pages/home/index.md"
-      #   label: "Homepage"
-      #   name: "home"
-      #   fields:
-      #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-      #     - {label: "Title", name: "title", widget: "string"}
       - file: "src/pages/information/index.md"
         label: "교회안내"
         name: "information"
@@ -133,3 +76,62 @@ collections:
           - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
           - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+  - name: "sunday-sermon"
+    label: "주일설교"
+    folder: "src/pages/sunday-sermon"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "sunday-sermon"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Video Id", name: "link", widget: "string"}
+  - name: "sunday-praise"
+    label: "주일찬양방송"
+    folder: "src/pages/sunday-praise"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "sunday-praise"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {
+        label: "Category", 
+        name: "category", 
+        widget: "select", 
+        options: [
+          { label: "임마누엘", value: 1 },
+          { label: "호산나", value: 2 },
+          { label: "시온", value: 3 },
+          { label: "할렐루야", value: 4 },
+          { label: "가브리엘", value: 5 },
+          { label: "마하나임", value: 6 }
+        ]
+        }
+      - {label: "Video Id", name: "link", widget: "string"}
+
+  - name: "notice"
+    label: "Notice"
+    folder: "src/pages/notice"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "notice-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+
+  
