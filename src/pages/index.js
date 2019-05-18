@@ -7,16 +7,22 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { frontmatter } = data.markdownRemark
-    const { edges } = data.allMarkdownRemark
+    const sermons = data.sundaySermon.edges
+    const worships = data.familyWorship.edges
     let latestSermonVideoId = ''
-    if (edges.length > 0) {
-      latestSermonVideoId = edges[0].node.frontmatter.link;
+    let worshipData = {}
+    if (sermons.length > 0) {
+      latestSermonVideoId = sermons[0].node.frontmatter.link;
+    }
+    if (worships.length > 0) {
+      worshipData = worships[0].node.frontmatter;
     }
     return (
       <Layout>
         <LandingPageTemplate
           images={[frontmatter.image1.publicURL, frontmatter.image2.publicURL, frontmatter.image3.publicURL]}
           latestSermon={latestSermonVideoId}
+          familyWorshipData = {worshipData}
         />
       </Layout>
     )
@@ -25,7 +31,7 @@ export default class IndexPage extends React.Component {
 
 export const pageQuery = graphql`
 query IndexQuery {
-  markdownRemark(frontmatter: { templateKey: { eq: "landing-page" } }) {
+  markdownRemark(frontmatter: {templateKey: {eq: "landing-page"}}) {
     frontmatter {
       title
       video {
@@ -39,26 +45,30 @@ query IndexQuery {
       }
       image2 {
         publicURL
-			}
+      }
       image3 {
         publicURL
       }
     }
   }
-  allMarkdownRemark(
-    filter: { frontmatter: { templateKey: { eq: "sunday-sermon" }}}
-    limit: 1
-    sort: {
-      fields: [frontmatter___date]
-      order: DESC
-  }) 
-  {
+  sundaySermon: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "sunday-sermon"}}}, limit: 1, sort: {fields: [frontmatter___date], order: DESC}) {
     edges {
       node {
         frontmatter {
           title
           date
           link
+        }
+      }
+    }
+  }
+  familyWorship: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "family-worship"}}}, limit: 1, sort: {fields: [frontmatter___date], order: DESC}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          reference
+          content
         }
       }
     }
