@@ -68,6 +68,16 @@ const More = styled.p`
 `
 
 export default function Section(props) {
+    let data = {
+        title: '',
+        reference: '',
+        content: ''
+    };
+
+    if (props.data !== undefined) {
+        data = props.data
+    }
+
     return (
         <Wrapper fluid style={{padding: "2rem 0 0 0"}}>
             <Row center="xs" start="md">
@@ -92,34 +102,30 @@ export default function Section(props) {
                                 <Col lg={5}>
                                     <Hidden smDown>
                                         <Word fontSize="2rem">
-                                            [월]_사도행전 16:6-10
+                                            {data.title}
                                         </Word>
                                     </Hidden>
                                     <Hidden mdUp>
                                         <Word fontSize="1.5rem">
-                                            [월]_사도행전 16:6-10
+                                            {data.title}
                                         </Word>
                                     </Hidden>
                                 </Col>
                                 <Col lg={7}>
                                     <Hidden smDown>
                                         <Detail fontSize="1.2rem">
-                                            사도신경 / 찬송가382장 / 하이델베르크 요리문답
+                                            {data.reference}
                                         </Detail>
                                     </Hidden>
                                     <Hidden mdUp>
                                         <Detail fontSize="0.8rem">
-                                            사도신경 / 찬송가382장 / 하이델베르크 요리문답
+                                            {data.reference}
                                         </Detail>
                                     </Hidden>
                                 </Col>
                             </Row>
                             <MyText>
-                                때론 하나님께서 우리 계획을 막으시는 것은 그분의 계획이 있기 때문입니다. 아시아에서 말씀을 전하려는 바울의 계획을 성령이 막으시고,
-                                항구 도시 드로아에서 하나님의 뜻을 알려 주십니다. 만일 바울이 자신의 계획을 계속 고집했다면,
-                                건너와서 도우라는 마게도냐 사람의 환상을 보고도 무시했을 것입니다. 그러나 바울은 마게도냐로 건너가 유럽 선교에
-                                힘쓰는 것이 하나님의 뜻임을 인정하고 부르심에 순종합니다. 하나님이 원하지 않으시면, 내가 아무리 좋은 계획을 세웠어도
-                                과감히 포기할 수 있어야 합니다. 생각하지 못한 곳, 예상하지 못한 일에 부르시더라도 즉각 순종하는 우리가 됩시다.
+                                {data.content}
                                 <br/><br/>
                                 합심기도 / 주기도문
                             </MyText>

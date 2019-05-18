@@ -31,6 +31,7 @@ const MainLink = styled.p`
 const LandingPageTemplate = ({
     images,
     latestSermon,
+    familyWorshipData,
   }) => (
     <div>
         <BackgroundVideo autoPlay loop muted>
@@ -92,7 +93,7 @@ const LandingPageTemplate = ({
         <Grid fluid>
             <Announcement items={[1,2,3]}></Announcement>
         </Grid>
-        <Section></Section>
+        <Section data={familyWorshipData}></Section>
         <Event events={[
             {src: "/img/family-sing.png", alt: "family-sing", title: "가족찬양제"},
             {src: "/img/publish-event.png", alt: "publish-event", title: "히즈핑거 출판감사예배"},
