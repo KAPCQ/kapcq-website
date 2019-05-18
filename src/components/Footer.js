@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid'
+import Hidden from '@material-ui/core/Hidden'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import { Text } from './style'
 
@@ -49,13 +50,15 @@ function Footer() {
             <Grid fluid style={{padding: "0"}}>
                 <Row style={{background: "#1D1D1D", padding: "2rem 0"}}>
                     <Col xsOffset={1} xs={10}>
-                        <h1 style={{color: "#fff", fontWeight: "bold", fontSize: "1.5rem", height: "5rem"}}>퀸즈장로교회</h1>
+                        <h1 style={{color: "#fff", fontWeight: "bold", fontSize: "1.5rem", height: "4rem"}}>퀸즈장로교회</h1>
                         <Row>
-                            <Col sm={6}>
-                                <FooterText>The Korean American Presbyterian Church of Queens</FooterText>
-                                <FooterText>143-17 Franklin Ave. Flushing, NY 11355</FooterText>
-                                <FooterText>Tel: (718) 886-4040,4340,4347</FooterText>
-                            </Col>
+                            <Hidden mdDown>
+                                <Col sm={6}>
+                                    <FooterText>The Korean American Presbyterian Church of Queens</FooterText>
+                                    <FooterText>143-17 Franklin Ave. Flushing, NY 11355</FooterText>
+                                    <FooterText>Tel: (718) 886-4040,4340,4347</FooterText>
+                                </Col>
+                            </Hidden>
                             <Col sm={6}>
                                 <FooterText>교회학교</FooterText>
                                 <FooterText>AGAPE</FooterText>
@@ -68,6 +71,17 @@ function Footer() {
                             <FaInstagram style={{margin: "1rem"}}></FaInstagram>
                             <FaLinkedinIn style={{margin: "1rem"}}></FaLinkedinIn>
                         </Text>
+                        <Hidden lgUp>
+                            <Row>
+                                <Col xs={12} style={{padding: "0"}}>
+                                    <div style={{fontSize: "0.8rem", textAlign: "center"}}> 
+                                        <FooterText>The Korean American Presbyterian Church of Queens</FooterText>
+                                        <FooterText>Tel: (718)886-4040,4340,4347</FooterText>
+                                        <FooterText>Fax : (718) 886-5555 </FooterText>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Hidden>
                         <h2 style={{margin: "2rem 0", color: "#707070", textAlign: "center"}}>2006-2019 KAPCQ. All Rights Reserved</h2>
                     </Col>
                 </Row>

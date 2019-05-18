@@ -71,7 +71,7 @@ const LandingPageTemplate = ({
                         </Row>
                     </Hidden>
                     <Row>
-                        <Col xs={12} xl={7}>
+                        <Col xs={12} xl={7} style={{paddingBottom: "1rem"}}>
                             <Video src={"https://www.youtube.com/embed/" + latestSermon + "?rel=0"}></Video>
                         </Col>
                         <Hidden mdDown>
