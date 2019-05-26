@@ -32,6 +32,7 @@ const LandingPageTemplate = ({
     images,
     latestSermon,
     familyWorshipData,
+    announcements,
   }) => (
     <div>
         <BackgroundVideo autoPlay loop muted>
@@ -91,7 +92,7 @@ const LandingPageTemplate = ({
             </Row>
         </Grid>
         <Grid fluid>
-            <Announcement items={[1,2,3]}></Announcement>
+            <Announcement items={announcements}></Announcement>
         </Grid>
         <Section data={familyWorshipData}></Section>
         <Event events={[
@@ -110,13 +111,5 @@ const LandingPageTemplate = ({
     description: PropTypes.string,
     menuItems: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
   }
-
-// class LandingPage extends React.Component {
-//     render() {
-//         return (
-//             <LandingPageTemplate></LandingPageTemplate>
-//         );
-//     }
-// }
 
 export default LandingPageTemplate
