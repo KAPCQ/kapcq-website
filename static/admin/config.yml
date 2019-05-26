@@ -97,6 +97,17 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Reference", name: "reference", widget: "string"}
       - {label: "Content", name: "content", widget: "text"}
+  - name: "notice"
+    label: "공지사항"
+    folder: "src/pages/notice"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "notice-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "From Date", name: "fromDate", widget: "date"}
+      - {label: "To Date", name: "toDate", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "sunday-praise"
     label: "주일찬양방송"
     folder: "src/pages/sunday-praise"
@@ -120,18 +131,6 @@ collections:
         ]
         }
       - {label: "Video Id", name: "link", widget: "string"}
-
-  - name: "notice"
-    label: "공지사항"
-    folder: "src/pages/notice"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "notice-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
       
   - name: "blog"
     label: "Blog"
