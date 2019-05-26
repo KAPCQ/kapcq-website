@@ -7,22 +7,36 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { frontmatter } = data.markdownRemark
+
     const sermons = data.sundaySermon.edges
     const worships = data.familyWorship.edges
+    const announcementEdges = data.announcements.edges
+
     let latestSermonVideoId = ''
     let worshipData = {}
+    let announcements = []
+
     if (sermons.length > 0) {
       latestSermonVideoId = sermons[0].node.frontmatter.link;
     }
     if (worships.length > 0) {
       worshipData = worships[0].node.frontmatter;
     }
+
+    for (let edge of announcementEdges) {
+      let notice = edge.node.frontmatter;
+      let noticeDate = new Date(notice.date);
+      notice.period = noticeDate.getMonth() + 1 + '월 ' + noticeDate.getDate() + '일';
+      announcements.push(notice);
+    }
+
     return (
       <Layout>
         <LandingPageTemplate
           images={[frontmatter.image1.publicURL, frontmatter.image2.publicURL, frontmatter.image3.publicURL]}
           latestSermon={latestSermonVideoId}
           familyWorshipData = {worshipData}
+          announcements = {announcements}
         />
       </Layout>
     )
@@ -69,6 +83,17 @@ query IndexQuery {
           title
           reference
           content
+        }
+      }
+    }
+  }
+  announcements:allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "notice-post"}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          date
+          description
         }
       }
     }

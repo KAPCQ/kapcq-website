@@ -4,53 +4,26 @@ import { Row, Col } from 'react-flexbox-grid';
 import Hidden from '@material-ui/core/Hidden'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { UnderLine } from './style';
+import AnnouncementList from './AnnouncementList';
+import './all.sass';
 
 const Wrapper = styled(Row)`
     background-color: #fff;
     padding: 2rem 0;
 `
 
-const Paper = styled.div`
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
-`
-
-const MyPaper = styled(Paper)`
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    border-radius: 4px;
-`
-
-const Flag = styled(Paper)`
-    float: right;
-    width: 4rem;
-    text-align: center;
-    font-size: 0.8rem;
-    padding: 0.7rem 0;
-    background-color: #e6ca90 !important;
-    color: #fff;
-`
-
 const MyLeftArrow = styled(FaChevronLeft)`
     font-size: 4.5rem !important;
     color: rgba(223, 172, 68, 0.8);
     float: right;
+    cursor: pointer;
 `
 
 const MyRightArrow = styled(FaChevronRight)`
     font-size: 4.5rem !important;
     color: rgba(223, 172, 68, 0.8);
     float: left;
-`
-
-const Title = styled.h6`
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #666666 !important;
-`
-
-const Body = styled.p`
-    color: #95989a !important;
-    padding: 1rem 0;
-    font-size: 0.8em;
+    cursor: pointer;
 `
 
 const MainTitle = styled.h1`
@@ -61,25 +34,31 @@ const MainTitle = styled.h1`
 ` 
 
 function Announcement(props) {
-  const gridItems = props.items ? props.items.map((menu, i) =>
-    <Col key={i} lg={3}>
-        <MyPaper elevation={1}>
-            <Flag elevation={1} square={true}>진행중</Flag>
-            <div style={{paddingTop: "3.5rem", margin: "1rem 0"}}>
-                <Title>
-                    제32회 사순절 서원 새벽기도회 <br/>
-                    3월 11일(월) - 4월 20일(토)
-                </Title>
-                <Body>
-                    기대하라! 하나님의 위대하심과 놀라운 회복과...<br/>
-                    기대하라! 하나님의 위대하심과 놀라운 회복과...
-                </Body>
-            </div>
-        </MyPaper>
-    </Col>
-  ) : <div></div>;
+    const [index, setIndex] = React.useState(0);
+    const [leftClicked, setLeft] = React.useState(false);
+    const [rightClicked, setRight] = React.useState(false);
 
-  return (
+    let announcementList = props.items.slice(index, index+3);
+
+    function handleLeftClick() {
+        if (index === 0) return;
+        setLeft(true);
+        setTimeout(() => {
+            setIndex(index - 1);
+            setLeft(false);
+        }, 500);
+    }
+
+    function handleRightClick() {
+        if (index+3 >= props.items.length) return;
+        setRight(true);
+        setTimeout(() => {
+            setIndex(index + 1);
+            setRight(false);
+        }, 500);
+    }
+
+    return (
         <Wrapper center="xs" middle="xs">
             <Hidden mdUp>
                 <Col xs={12}>
@@ -89,17 +68,19 @@ function Announcement(props) {
             </Hidden>
             <Hidden smDown>
                 <Col md={1}>
-                    <MyLeftArrow></MyLeftArrow>
+                    <MyLeftArrow onClick={handleLeftClick}></MyLeftArrow>
                 </Col>
             </Hidden>
-            {gridItems}
+            <Col md={10}>
+                <AnnouncementList items={announcementList} className={leftClicked ? 'moveLeft' : rightClicked ? 'moveRight' : ''}></AnnouncementList>
+            </Col>
             <Hidden smDown>
                 <Col md={1}>
-                    <MyRightArrow></MyRightArrow>
+                    <MyRightArrow onClick={handleRightClick}></MyRightArrow>
                 </Col>
             </Hidden>
         </Wrapper>
-  );
+    );
 }
 
 export default Announcement;
