@@ -25,8 +25,12 @@ export default class IndexPage extends React.Component {
 
     for (let edge of announcementEdges) {
       let notice = edge.node.frontmatter;
-      let noticeDate = new Date(notice.date);
-      notice.period = noticeDate.getMonth() + 1 + '월 ' + noticeDate.getDate() + '일';
+      let fromDate = new Date(notice.fromDate.split('T')[0]);
+      let toDate = new Date(notice.toDate.split('T')[0]);
+      notice.period = fromDate.getMonth() + 1 + '월 ' + fromDate.getDate() + '일';
+      if (fromDate.getTime() !== toDate.getTime()) {
+        notice.period += ' - ' + (toDate.getMonth() + 1) + '월 ' + toDate.getDate() + '일';
+      }
       announcements.push(notice);
     }
 
@@ -92,7 +96,8 @@ query IndexQuery {
       node {
         frontmatter {
           title
-          date
+          fromDate
+          toDate
           description
         }
       }
