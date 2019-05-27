@@ -16,6 +16,7 @@ import NoticePostPreview from './preview-templates/NoticePostPreview'
 import SundayPraisePostPreview from './preview-templates/SundayPraisePostPreview'
 import SundaySermonPostPreview from './preview-templates/SundaySermonPostPreview'
 import FamilyWorshipPostPreview from './preview-templates/FamilyWorshipPostPreview'
+import ImageGalleryPostPreview from './preview-templates/ImageGalleryPostPreview'
 
 CMS.registerPreviewTemplate('landing', LandingPagePreview)
 CMS.registerPreviewTemplate('home', HomePagePreview)
@@ -33,3 +34,4 @@ CMS.registerPreviewTemplate('notice', NoticePostPreview)
 CMS.registerPreviewTemplate('sunday-praise', SundayPraisePostPreview)
 CMS.registerPreviewTemplate('sunday-sermon', SundaySermonPostPreview)
 CMS.registerPreviewTemplate('family-worship', FamilyWorshipPostPreview)
+CMS.registerPreviewTemplate('image-gallery', ImageGalleryPostPreview)

@@ -86,17 +86,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Video Id", name: "link", widget: "string"}
-  - name: "family-worship"
-    label: "가정예배"
-    folder: "src/pages/family-worship"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "family-worship"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Reference", name: "reference", widget: "string"}
-      - {label: "Content", name: "content", widget: "text"}
   - name: "notice"
     label: "공지사항"
     folder: "src/pages/notice"
@@ -109,6 +98,27 @@ collections:
       - {label: "To Date", name: "toDate", widget: "date"}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "family-worship"
+    label: "가정예배"
+    folder: "src/pages/family-worship"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "family-worship"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Reference", name: "reference", widget: "string"}
+      - {label: "Content", name: "content", widget: "text"}
+  - name: "image-gallery"
+    label: "사진첩"
+    folder: "src/pages/image-gallery"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "image-gallery"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: image, widget: image}
   - name: "sunday-praise"
     label: "주일찬양방송"
     folder: "src/pages/sunday-praise"
