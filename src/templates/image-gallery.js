@@ -19,6 +19,18 @@ export const ImageGalleryPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                 {title}
             </h1>
+            <div className="content">
+                <div
+                    className="full-width-image-container margin-top-0"
+                    style={{
+                    backgroundImage: `url(${image})`,
+                    backgroundPosition: "center"
+                    }}
+                ></div>
+            </div>
+            {image !== undefined &&
+              <img src={image.publicURL} alt={image.name}></img>
+            }
           </div>
         </div>
       </div>
@@ -29,6 +41,7 @@ export const ImageGalleryPostTemplate = ({
 ImageGalleryPostTemplate.propTypes = {
   helmet: PropTypes.object,
   title: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 }
 
 const ImageGalleryPost = ({ data }) => {
@@ -64,6 +77,10 @@ export const pageQuery = graphql`
       id
       frontmatter {
         title
+        image {
+            publicURL
+            name
+        }
       }
     }
   }

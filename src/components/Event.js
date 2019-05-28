@@ -18,10 +18,11 @@ const Image = styled.img`
 
 function Event(props) {
     const events = props.events.map((event, i) =>
+        event.image !== undefined ?
         <Col key={i} md={4} style={{position: "relative"}}>
-            <Image src={event.src} alt={event.alt}></Image>
+            <Image src={event.image.publicURL} alt={event.name}></Image>
             <Title>{event.title}</Title>
-        </Col>
+        </Col> : <div></div>
     );
 
     return (

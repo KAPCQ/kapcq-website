@@ -11,10 +11,12 @@ export default class IndexPage extends React.Component {
     const sermons = data.sundaySermon.edges
     const worships = data.familyWorship.edges
     const announcementEdges = data.announcements.edges
+    const imageEdges = data.imageGallery.edges
 
     let latestSermonVideoId = ''
     let worshipData = {}
     let announcements = []
+    let galleryImages = []
 
     if (sermons.length > 0) {
       latestSermonVideoId = sermons[0].node.frontmatter.link;
@@ -34,6 +36,12 @@ export default class IndexPage extends React.Component {
       announcements.push(notice);
     }
 
+    for (let imageEdge of imageEdges) {
+      galleryImages.push(imageEdge.node.frontmatter);
+    }
+
+    console.log(galleryImages);
+
     return (
       <Layout>
         <LandingPageTemplate
@@ -41,6 +49,7 @@ export default class IndexPage extends React.Component {
           latestSermon={latestSermonVideoId}
           familyWorshipData = {worshipData}
           announcements = {announcements}
+          galleryImages = {galleryImages}
         />
       </Layout>
     )
@@ -99,6 +108,19 @@ query IndexQuery {
           fromDate
           toDate
           description
+        }
+      }
+    }
+  }
+  imageGallery: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "image-gallery"}}}, limit: 3, sort: {fields: [frontmatter___date], order: DESC}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          image {
+            publicURL
+            name
+          }
         }
       }
     }
