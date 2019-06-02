@@ -1,58 +1,67 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
+import { Grid, Row, Col } from 'react-flexbox-grid'
+import styled from 'styled-components'
 import WelcomeProcess from '../components/WelcomeProcess'
 import NewComerRegister from '../components/NewComerRegister'
 import Minstry from '../components/Ministry'
 import Path from '../components/Path'
 import Facility from '../components/Facility'
 
+const Header = styled.h1`
+    color: #DFAC44;
+    padding-top: 10rem;
+    font-size: 3.75rem;
+    text-align: left;
+`
+
+const Message = styled.p`
+    color: #707070;
+    padding-top: 1rem;
+    text-align: left;
+    font-size: 1.25rem;
+`
+
 export default class IndexPage extends React.Component {
     render() {
         return (
             <Layout>
-                <Grid container style={{backgroundColor: "rgba(230, 202, 144, 0.5)"}}>
-                    <Grid item sm={1}>
-                    </Grid>
-                    <Grid item sm={10}>
-                        <Typography variant="display3" style={{color: "#DFAC44", paddingTop: "10rem"}}>환영합니다.</Typography>
-                        <Typography variant="title" style={{color: '#707070', paddingTop: '1rem'}}>
-                            퀸즈장로교회에 처음 오신 분들을 위한 <br/>
-                            교회 방문부터 교인이 되기까지의 과정
-                        </Typography>
-                        <WelcomeProcess></WelcomeProcess>
-                    </Grid>
-                    <Grid item sm={1}></Grid>
+                <Grid fluid style={{backgroundColor: "rgba(230, 202, 144, 0.5)"}}>
+                    <Row center="xs">
+                        <Col sm={10}>
+                            <Header>환영합니다.</Header>
+                            <Message>퀸즈장로교회에 처음 오신 분들을 위한 교회 방문부터 교인이 되기까지의 과정</Message>
+                            <WelcomeProcess></WelcomeProcess>
+                        </Col>
+                    </Row>
                 </Grid>
-                <Grid container style={{backgroundColor: "#EDE9DE"}}>
-                    <Grid item sm={1}></Grid>
-                    <Grid item sm={10}>
-                        <NewComerRegister></NewComerRegister>
-                    </Grid>
-                    <Grid item sm={1}></Grid>
+                <Grid fluid style={{backgroundColor: "#EDE9DE"}}>
+                    <Row center="xs">
+                        <Col sm={10}>
+                            <NewComerRegister></NewComerRegister>
+                        </Col>
+                    </Row>
                 </Grid>
-                <Grid container>
-                    <Grid item sm={1}></Grid>
-                    <Grid item sm={10}>
-                        <Minstry></Minstry>
-                    </Grid>
-                    <Grid item sm={1}></Grid>
+                <Grid fluid>
+                    <Row center="xs">
+                        <Col sm={10}>
+                            <Minstry></Minstry>
+                        </Col>
+                    </Row>
                 </Grid>
-                <Grid container style={{backgroundColor: "rgba(208, 208, 208, 0.2)"}}>
-                    <Grid item sm={1}></Grid>
-                    <Grid item sm={10}>
-                        <Path></Path>
-                    </Grid>
-                    <Grid item sm={1}></Grid>
+                <Grid fluid style={{backgroundColor: "rgba(208, 208, 208, 0.2)"}}>
+                    <Row center="xs">
+                        <Col sm={10}>
+                            <Path></Path>
+                        </Col>
+                    </Row>
                 </Grid>
-                <Grid container>
-                    <Grid item sm={1}></Grid>
-                    <Grid item sm={10}>
-                        <Facility></Facility>
-                    </Grid>
-                    <Grid item sm={1}></Grid>
+                <Grid fluid>
+                    <Row center="xs">
+                        <Col sm={10}>
+                            <Facility></Facility>
+                        </Col>
+                    </Row>
                 </Grid>
             </Layout>
         )

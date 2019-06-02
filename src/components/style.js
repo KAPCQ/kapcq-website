@@ -79,9 +79,16 @@ export const MobileTitle = styled.h1`
     text-align: center;
 ` 
 
-export const Header = styled(Typography)`
-    color: #606060 !important;
-    font-weight: bold !important;
+export const Paper = styled.div`
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+    background: #fff;
+    border-radius: 4px;
+`
+
+export const Header = styled.h1`
+    color: #606060;
+    font-weight: bold;
+    font-size: 1.5rem;
 `
 
 export const SubHeader = styled(Typography)`
