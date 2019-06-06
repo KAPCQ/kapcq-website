@@ -100,7 +100,7 @@ export const Description = styled.p`
 `
 
 export const Button = styled.a`
-    padding: 0.2rem 1rem;
+    padding: 0.5rem 1rem;
     color: #fff;
     border-radius: 0.2rem;
     font-size: 1.4rem;
@@ -121,8 +121,9 @@ export const PrimaryButton = styled.button`
 
 export const UnderLine = styled.div`
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: -1rem;
+    color: ${props => props.color};
 `
 
 export const Circle = styled.div`
