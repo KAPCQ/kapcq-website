@@ -11,7 +11,7 @@ import Facility from '../components/Facility'
 const Header = styled.h1`
     color: #DFAC44;
     padding-top: 10rem;
-    font-size: 3.75rem;
+    font-size: 3rem;
     text-align: left;
 `
 
