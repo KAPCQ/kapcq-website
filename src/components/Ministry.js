@@ -1,7 +1,8 @@
 import React from 'react';
-import { Title, Description, Button, Paper } from './style';
+import { Title, Description, Button, Paper, UnderLine } from './style';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid'
+import Hidden from '@material-ui/core/Hidden'
 
 const Wrapper = styled.div`
     background-color: #E1B355;
@@ -16,14 +17,20 @@ const CardTitle = styled.h2`
 `
 
 const MyPaper = styled(Paper)`
-    margin: 0 1rem;
+    margin: 0.5rem 1rem;
 `
 
 function Ministry(props) {
     return (
         <div>
-            <Title style={{marginTop: "3rem"}}>사역안내</Title>
-            <Description style={{marginTop: "3rem", textAlign:"center"}}>
+            <Hidden smDown>
+                <Title style={{marginTop: "3rem"}}>사역안내</Title>
+            </Hidden>
+            <Hidden mdUp>
+                <Title mobile style={{marginTop: "3rem"}}>사역안내</Title>
+            </Hidden>
+            <UnderLine color="#65ACB6">----</UnderLine>
+            <Description style={{marginTop: "1rem", textAlign:"center"}}>
                 사역에 대한 설명과 어떠한 사역을 하고 있는지를 간략하게 설명할 문구가 필요합니다.
             </Description>
             <Grid fluid style={{marginTop: "3rem"}}>
@@ -55,7 +62,12 @@ function Ministry(props) {
                 </Row>
             </Grid>
             <div style={{display: "flex", justifyContent: "center", margin: "3rem 0"}}>
-                <Button style={{backgroundColor: "rgba(112, 112, 112, 0.78)"}}>사역 참여하기</Button> 
+                <Hidden smDown>
+                    <Button style={{backgroundColor: "rgba(112, 112, 112, 0.78)"}}>사역 참여하기</Button> 
+                </Hidden>
+                <Hidden mdUp>
+                    <Button mobile style={{backgroundColor: "rgba(112, 112, 112, 0.78)"}}>사역 참여하기</Button> 
+                </Hidden>
             </div>
         </div>
     );

@@ -9,9 +9,9 @@ export const Text = styled.p`
 `
 
 export const Title = styled.h1`
-    color: #3D3D3D !important;
-    font-weight: bold !important;
-    font-size: 3rem;
+    color: #3D3D3D;
+    font-weight: bold;
+    font-size: ${props => props.mobile ? '1.5rem' : '3rem'};
     text-align: center;
 ` 
 
@@ -103,7 +103,7 @@ export const Button = styled.a`
     padding: 0.5rem 1rem;
     color: #fff;
     border-radius: 0.2rem;
-    font-size: 1.4rem;
+    font-size: ${props => props.mobile ? '1rem' : '1.4rem'};
     font-weight: bold;
     text-align: center;
 `
