@@ -88,7 +88,7 @@ export const Paper = styled.div`
 export const Header = styled.h1`
     color: #606060;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: ${props => props.mobile ? '1rem' : '1.3rem'};
 `
 
 export const SubHeader = styled(Typography)`
@@ -97,6 +97,7 @@ export const SubHeader = styled(Typography)`
 
 export const Description = styled.p`
   color: #95989A;
+  font-size: 0.95rem;
 `
 
 export const Button = styled.a`
