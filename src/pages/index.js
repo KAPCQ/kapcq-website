@@ -60,13 +60,6 @@ export const pageQuery = graphql`
 query IndexQuery {
   markdownRemark(frontmatter: {templateKey: {eq: "landing-page"}}) {
     frontmatter {
-      title
-      video {
-        publicURL
-      }
-      heading
-      description
-      menuItems
       image1 {
         publicURL
       }
