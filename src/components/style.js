@@ -9,9 +9,9 @@ export const Text = styled.p`
 `
 
 export const Title = styled.h1`
-    color: #3D3D3D !important;
-    font-weight: bold !important;
-    font-size: 3rem;
+    color: #3D3D3D;
+    font-weight: bold;
+    font-size: ${props => props.mobile ? '1.5rem' : '3rem'};
     text-align: center;
 ` 
 
@@ -88,7 +88,7 @@ export const Paper = styled.div`
 export const Header = styled.h1`
     color: #606060;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: ${props => props.mobile ? '1rem' : '1.3rem'};
 `
 
 export const SubHeader = styled(Typography)`
@@ -97,13 +97,14 @@ export const SubHeader = styled(Typography)`
 
 export const Description = styled.p`
   color: #95989A;
+  font-size: 0.95rem;
 `
 
 export const Button = styled.a`
-    padding: 0.2rem 1rem;
+    padding: 0.5rem 1rem;
     color: #fff;
     border-radius: 0.2rem;
-    font-size: 1.4rem;
+    font-size: ${props => props.mobile ? '1rem' : '1.4rem'};
     font-weight: bold;
     text-align: center;
 `
@@ -121,8 +122,9 @@ export const PrimaryButton = styled.button`
 
 export const UnderLine = styled.div`
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: -1rem;
+    color: ${props => props.color};
 `
 
 export const Circle = styled.div`
