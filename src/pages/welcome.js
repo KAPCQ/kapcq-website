@@ -29,7 +29,7 @@ export default class IndexPage extends React.Component {
                 <Grid fluid style={{backgroundColor: "rgba(230, 202, 144, 0.5)"}}>
                     <Row center="xs">
                         <Col sm={10}>
-                            <Header>환영합니다.</Header>
+                            <Header>test 환영합니다.</Header>
                             <Message>퀸즈장로교회에 처음 오신 분들을 위한 교회 방문부터 교인이 되기까지의 과정</Message>
                             <WelcomeProcess></WelcomeProcess>
                         </Col>

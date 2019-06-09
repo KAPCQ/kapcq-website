@@ -56,7 +56,10 @@ const LandingPageTemplate = ({
                                 <Row end="xs">
                                     <Col xs={4} style={{padding: "0"}}>
                                     <Link to='/welcome'>
-                                        <MainLink>새가족안내</MainLink>
+                                        <MainLink>
+                                            {/* 새가족안내 */}
+                                            test
+                                            </MainLink>
                                     </Link>
                                     </Col>
                                     <Col xs={4} style={{padding: "0"}}>
