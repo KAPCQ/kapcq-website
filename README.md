@@ -11,7 +11,7 @@ It follows the [JAMstack architecture](https://jamstack.org) by using Git as a s
 
 ## Run Locally
 ```
-$ git clone https://github.com/jjoung1128/kapcq.git
+$ git clone https://github.com/KAPCQ/kapcq-website.git
 $ cd kapcq
 $ yarn
 $ npm run develop
