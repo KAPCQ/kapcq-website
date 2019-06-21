@@ -3,7 +3,7 @@ import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import GotoIcon from '@material-ui/icons/ChevronRight';
-import SearchIcon from '@material-ui/icons/Search';
+import HomeIcon from '@material-ui/icons/Home';
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -31,21 +31,7 @@ function MobileDrawer(props) {
 
   const toggleMenu = (index) => () => {
     setState({ ...state, position: index });
-    console.log(state.position);
   }
-  // var arr = [];
-  // props.menus.forEach(item => {
-  //   var obj = {item: item.title, subItems: []};
-  //   item.menu.forEach(element => {
-  //       if (element.subItems.length > 0) {
-  //           obj.subItems.push(...element.subItems);
-  //       } else {
-  //           var subItem = {name: element.item, link: element.link};
-  //           obj.subItems.push(subItem);
-  //       }
-  //   });
-  //   arr.push(obj);
-  // });
 
   return (
     <div>
@@ -57,7 +43,10 @@ function MobileDrawer(props) {
           <Row xs="center">
             <Col xs={12}>
               <div style={{borderBottom: "2px solid #DFAC44"}}>
-                <SearchIcon style={{color: "#DFAC44"}}></SearchIcon>
+                <Link to="/" >
+                  <HomeIcon style={{color: "#DFAC44"}}/>
+                  <Text style={{fontSize: "1rem", float: "right", paddingRight: "4rem"}}>퀸즈장로교회</Text>
+                </Link>
               </div>
               <ul>
                 {props.menus.map((menu, i) => (
@@ -74,9 +63,6 @@ function MobileDrawer(props) {
             </Col>
           </Row>
         </Grid>
-        {/* {arr.map((menu, i) => (
-          <NestedList key={i} item={menu.item} link={menu.link} subItems={menu.subItems}></NestedList>
-        ))} */}
       </Drawer>
     </div>
   );
