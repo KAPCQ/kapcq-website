@@ -88,6 +88,7 @@ export const Paper = styled.div`
 export const Header = styled.h1`
     color: #606060;
     font-weight: bold;
+    text-align: ${props => props.center ? 'center' : 'left'};
     font-size: ${props => props.mobile ? '1rem' : '1.3rem'};
 `
 
