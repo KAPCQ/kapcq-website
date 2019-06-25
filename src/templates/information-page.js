@@ -193,7 +193,7 @@ export const InformationPageTemplate = ({ title }) => {
                     <Table
                         name="정기예배"
                         header1="시간"
-                        header2="주일 예배"
+                        header2="장소"
                         rows={[
                             {
                                 fontSize: "1.75rem",
@@ -246,7 +246,7 @@ export const InformationPageTemplate = ({ title }) => {
                     <Table
                         name="교회학교"
                         header1="시간"
-                        header2="주일 예배"
+                        header2="장소"
                         rows={[
                             {
                                 fonstSize: "1rem",
@@ -310,7 +310,7 @@ export const InformationPageTemplate = ({ title }) => {
                     <Table
                         name="각 부서 모임"
                         header1="시간"
-                        header2="주일 예배"
+                        header2="장소"
                         rows={[
                             {
                                 fontSize: "1rem",
@@ -345,15 +345,15 @@ export const InformationPageTemplate = ({ title }) => {
             </Row>
         </Grid>
         <Grid fluid>
-            <Row>
-                <Col sm={1}></Col>
+            <Row center="xs">
                 <Col sm={10}>
-                    <Title variant="h3" align="center" style={{marginTop: "3rem"}}>
-                        섬기는 이들 <FaUsers style={{color: "#E1B355"}}></FaUsers>
-                    </Title>
-                    <UnderLine style={{color: "#E1B355"}}>- - - -</UnderLine>
+                    <Hidden smDown>
+                        <Title style={{marginTop: "3rem"}}>
+                            섬기는 이들 <FaUsers style={{color: "#E1B355"}}></FaUsers>
+                        </Title>
+                        <UnderLine style={{color: "#E1B355"}}>- - - -</UnderLine>
+                    </Hidden>
                 </Col>
-                <Col sm={1}></Col>
             </Row>
         </Grid>
     </div>    

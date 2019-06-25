@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/style'
+import Hidden from '@material-ui/core/Hidden'
 
 const MyTable = styled.table`
     width: 100%;
@@ -25,6 +26,7 @@ const MyTable = styled.table`
 
 const CenterCell = styled.td`
     text-align: center;
+    font-size: ${props => props.mobile ? '0.8rem' : '1rem'};
 `
 
 const TitleCell = styled.td`
@@ -35,16 +37,29 @@ const TitleCell = styled.td`
 function Table(props) {
     const rows = props.rows.map((row, i) =>
         <tr key={i}>
-            <TitleCell size={row.fontSize}>{row.data[0]}</TitleCell>
-            <CenterCell>
-                {row.data[1]}
-            </CenterCell>
-            <CenterCell>
-                {row.data[2]}
-            </CenterCell>
-            <CenterCell>
-                {row.data[3]}
-            </CenterCell>
+            <Hidden smDown>
+                <TitleCell size={row.fontSize}>{row.data[0]}</TitleCell>
+                <CenterCell>
+                    {row.data[1]}
+                </CenterCell>
+                <CenterCell>
+                    {row.data[2]}
+                </CenterCell>
+                <CenterCell>
+                    {row.data[3]}
+                </CenterCell>
+            </Hidden>
+            <Hidden mdUp>
+                <CenterCell mobile>
+                    {row.data[1]}
+                </CenterCell>
+                <CenterCell mobile>
+                    {row.data[2]}
+                </CenterCell>
+                <CenterCell mobile>
+                    {row.data[3]}
+                </CenterCell>
+            </Hidden>
         </tr>
     );
     return (
@@ -53,10 +68,12 @@ function Table(props) {
             <MyTable>
                 <thead>
                     <tr>
+                        <Hidden smDown> 
                         <th style={{borderRight: "0"}}></th>
-                        <th style={{width: "10rem", borderLeft: "0"}}></th>
-                        <th style={{width: "20rem"}}>{props.header1}</th>
-                        <th style={{width: "30rem"}}>{props.header2}</th>
+                        </Hidden>
+                        <th style={{borderLeft: "0"}}></th>
+                        <th >{props.header1}</th>
+                        <th >{props.header2}</th>
                     </tr>
                 </thead>
                 <tbody>
