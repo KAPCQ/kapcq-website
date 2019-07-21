@@ -22,7 +22,7 @@ export const Banner = styled.div`
     padding: 0.3rem;
     color: #707070;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
@@ -102,10 +102,10 @@ export const Description = styled.p`
 `
 
 export const Button = styled.a`
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     color: #fff;
     border-radius: 0.2rem;
-    font-size: ${props => props.mobile ? '1rem' : '1.4rem'};
+    font-size: ${props => props.mobile ? '1rem' : '1.2rem'};
     font-weight: bold;
     text-align: center;
 `

@@ -5,14 +5,14 @@ import { Text } from '../components/style';
 
 const DateBox = styled.div`
     background-color: ${props => props.backgroundColor};
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
     border-radius: 0.5rem;
     padding: 0.5rem 0;
 `
 
 function DateTitle(props) {
     return (
-        <Grid fluid>
+        <Grid fluid style={{padding: "0"}}>
             <Row>
                 <Col xs={4}>
                     <DateBox backgroundColor={props.backgroundColor}>
@@ -20,11 +20,11 @@ function DateTitle(props) {
                         <Text center fontSize="2.3rem">{props.date}</Text>
                     </DateBox>
                 </Col>
-                <Col xs={8} style={{position: "relative"}}>
+                <Col xs={8} style={{position: "relative", marginTop: "0.5rem"}}>
                     <Text fontSize="1.3rem">
                     {props.title}
                     </Text>
-                    <Text fontSize="0.9rem" style={{position: "absolute", bottom: "1rem"}}>
+                    <Text fontSize="0.8rem" style={{position: "absolute", bottom: "1rem"}}>
                     {props.word}
                     </Text>
                 </Col>
