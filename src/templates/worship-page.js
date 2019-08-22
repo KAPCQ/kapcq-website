@@ -51,8 +51,13 @@ const ButtonWrapper = styled.div`
   border-radius: 0.2rem;
 `
 
-export const WorshipPageTemplate = ({ title }) => {
-
+export const WorshipPageTemplate = ({ title, sundaySermons }) => {
+  for (var sermon of sundaySermons) {
+    var sermonDate = new Date(sermon.date);
+    sermon.year = '주후 ' + sermonDate.getFullYear() + '.';
+    sermon.date = sermonDate.getMonth() + '.' + sermonDate.getDate();
+  }
+  console.log(sundaySermons);
   return (
     <div>
         <Hidden smDown>
@@ -315,16 +320,24 @@ export const WorshipPageTemplate = ({ title }) => {
 }
 
 WorshipPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  sundaySermons: PropTypes.array
 }
 
 const WorshipPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
+  const { sundaySermon: sermon } = data;
+  let sundaySermons = [];
+  
+  for (var item of sermon.edges) {
+    sundaySermons.push(item.node.frontmatter);
+  }
 
   return (
     <Layout>
       <WorshipPageTemplate
-        title={post.frontmatter.title}
+        title = {post.frontmatter.title}
+        sundaySermons = {sundaySermons}
       />
     </Layout>
   )
@@ -341,6 +354,17 @@ export const worshipPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+      }
+    }
+    sundaySermon: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "sunday-sermon"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            link
+          }
+        }
       }
     }
   }
