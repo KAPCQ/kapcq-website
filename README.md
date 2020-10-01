@@ -29,9 +29,9 @@ $ npm run serve
 Fork this repository by clicking on the fork button on the top of this page.
 This will create a copy of this repository in your account.
 
-### Clone the repository
+### Clone this repository
 
-Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the clone button and then click the *copy to clipboard* icon.
+Now clone this forked repository to your machine. Go to your GitHub account, open the forked repository, click on the clone button and then click the *copy to clipboard* icon.
 
 Open a terminal and run the following git command:
 
